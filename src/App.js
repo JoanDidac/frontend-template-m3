@@ -11,7 +11,7 @@ import PrivateView from './views/PrivateView';
 import IsPrivate from './components/IsPrivate';
 import DronesList from './components/DronesList';
 import PostsList from './components/PostsList';
-import LandingPage from './components/LandingPage';
+// import LandingPage from './components/LandingPage';
 import DroneDetails from './components/DronesDetails';
 
 function App() {
