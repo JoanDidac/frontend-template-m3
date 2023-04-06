@@ -11,8 +11,8 @@ export default function LandingPage() {
     const fetchDrone = async () => {
       try {
         const response = await droneService.getDrones();
-        // Assuming you want to display the first drone as the landing page drone
-        setDrone(response[0]);
+        // display hardcoded drone as the landing page drone, in the future will display the drone with more likes.
+        setDrone(response[8]);
       } catch (error) {
         console.error(error);
       }
