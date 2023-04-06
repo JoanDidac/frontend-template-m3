@@ -22,12 +22,14 @@ function App() {
       
       <Routes>
         <Route path="/" element={<Home />} />
+        
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/private" element={<IsPrivate><PrivateView /></IsPrivate>} />
         <Route path="/error" element={<ErrorPage />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/drones" element={<DronesList/>} />
+        <Route path="/drones/:id" element={<DroneDetails />} />
         <Route path="/posts" element={<PostsList/>} />
       </Routes>
     </div>

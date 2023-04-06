@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import postService from '../services/postService';
 
 function PostsList() {
   const [posts, setPosts] = useState([]);
@@ -7,8 +7,8 @@ function PostsList() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios.get('/posts');
-        setPosts(response.data);
+        const response = await postService.getPosts();
+        setPosts(response);
       } catch (error) {
         console.error('Error fetching posts:', error);
       }
@@ -21,7 +21,15 @@ function PostsList() {
       <h2>All Posts</h2>
       <ul>
         {posts.map(post => (
-          <li key={post._id}>{post.title} - {post.message}</li>
+            
+        
+          <React.Fragment key={post._id}>
+            <img src={post.media} alt={post.title} />
+            <li>{post.title}</li>
+            <li>{post.message}</li>
+          </React.Fragment>
+          
+        
         ))}
       </ul>
     </div>

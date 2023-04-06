@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import droneService from '../services/droneService';
 
 function DronesList() {
   const [drones, setDrones] = useState([]);
@@ -7,8 +7,8 @@ function DronesList() {
   useEffect(() => {
     const fetchDrones = async () => {
       try {
-        const response = await axios.get('/drones');
-        setDrones(response.data);
+        const response = await droneService.getDrones();
+        setDrones(response);
       } catch (error) {
         console.error('Error fetching drones:', error);
       }
@@ -21,7 +21,10 @@ function DronesList() {
       <h2>All Drones</h2>
       <ul>
         {drones.map(drone => (
-          <li key={drone._id}>{drone.name} - {drone.description}</li>
+          <React.Fragment key={drone._id}>
+          <h1>{drone.model}</h1>
+            <img src={drone.imageUrl} alt={drone.model} />
+          </React.Fragment>
         ))}
       </ul>
     </div>
