@@ -11,12 +11,15 @@ import PrivateView from './views/PrivateView';
 import IsPrivate from './components/IsPrivate';
 import DronesList from './components/DronesList';
 import PostsList from './components/PostsList';
+import LandingPage from './components/LandingPage';
+import DroneDetails from './components/DronesDetails';
 
 function App() {
   return (
     <div className="App">
       <Toaster/>
       <Navbar />
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />

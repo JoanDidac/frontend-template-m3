@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import LandingPage from '../components/LandingPage';
 import droneService from '../services/droneService';
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
   return (
     <div>
       <h1>Sky Pulse</h1>
+      
       {drones.map(elem => {
         return (
           <div>
