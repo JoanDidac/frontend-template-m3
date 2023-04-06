@@ -21,17 +21,21 @@ export default function Home() {
 
   return (
     <div>
-      <h1>Sky Pulse</h1>
-      
+      <LandingPage />
+      {/* Add slider component here */}
       {drones.map(elem => {
         return (
           <div>
-          {/* <p>{elem.imageUrl}</p> */}
-          {/* <p>{elem.brand}</p>  */}
-          <p>{elem.model}</p>
-          {/* <p>{elem.specs}</p> /*Object inside object, not accessing data*/ }
-        </div>
-        )
+            <p>{elem.model}</p>
+            <img src={elem.imageUrl} alt={`${elem.model}`} />
+            <p>{elem.brand}</p> 
+            <p>Max Flight Time: {elem.specs?.maxFlightTime || "N/A"} minutes</p>
+            <p>Max Speed: {elem.specs?.maxSpeed || "N/A"} km/h</p>
+            <p>Range: {elem.specs?.range || "N/A"} km</p>
+            <p>Weight: {elem.specs?.weight || "N/A"} kg</p>
+            <p>Dimensions: {elem.specs?.dimensions || "N/A"}</p>
+          </div>
+        );
       })}
     </div>
   )
