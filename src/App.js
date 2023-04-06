@@ -9,6 +9,8 @@ import Signup from './views/auth/Signup';
 import Login from './views/auth/Login';
 import PrivateView from './views/PrivateView';
 import IsPrivate from './components/IsPrivate';
+import DronesList from './components/DronesList';
+import PostsList from './components/PostsList';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
         <Route path="/private" element={<IsPrivate><PrivateView /></IsPrivate>} />
         <Route path="/error" element={<ErrorPage />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/drones" element={<DronesList/>} />
+        <Route path="/posts" element={<PostsList/>} />
       </Routes>
     </div>
   );
