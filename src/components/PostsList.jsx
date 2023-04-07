@@ -2,12 +2,10 @@ import React, { useEffect, useState } from 'react';
 import postService from '../services/postService';
 import CreatePost from './CreatePost';
 import PostPreview from './PostPreview';
-import { useNavigate } from 'react-router-dom';
 
 function PostsList() {
   const [posts, setPosts] = useState([]);
   const [showCreatePostForm, setShowCreatePostForm] = useState(false);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -32,10 +30,6 @@ function PostsList() {
     setShowCreatePostForm(!showCreatePostForm);
   };
 
-  const handlePostClick = (postId) => {
-    navigate(`/posts/${postId}`);
-  };
-
   return (
     <div>
       <h2>All Posts</h2>
@@ -46,9 +40,7 @@ function PostsList() {
           <PostPreview
             key={post._id}
             post={post}
-            handlePostClick={handlePostClick}
           />
-          
         ))}
       </div>
     </div>

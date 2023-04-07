@@ -1,16 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function PostPreview({ post }) {
   const handleImageLoad = () => {
     // ...
-  };
-
-  const navigate = useNavigate();
-
-  const handlePostClick = (postId) => {
-    navigate(`/posts/${postId}`);
   };
 
   return (
@@ -28,7 +22,7 @@ function PostPreview({ post }) {
         <h3>{post.title}</h3>
         <p>{post.message}</p>
         <Link to={`/posts/${post._id}/edit`}>Edit Post</Link>
-        <Link to={`/posts/${post._id}`} onClick={() => handlePostClick(post._id)}>See more</Link>
+        <Link to={`/posts/${post._id}`}>See more</Link>
       </div>
     </div>
   );
@@ -41,7 +35,6 @@ PostPreview.propTypes = {
     title: PropTypes.string.isRequired,
     message: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
-  handlePostClick: PropTypes.func.isRequired,
 };
 
 export default PostPreview;
