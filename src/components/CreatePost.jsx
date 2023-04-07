@@ -62,7 +62,8 @@ function CreatePost() {
           value={postData.media}
           onChange={handleChange}
         />
-
+        {/* ---------------------- MAP LOCATION where img/vid were shot---------------------- */}
+        
         <label htmlFor="location.latitude">Latitude:</label>
         <input
           type="number"
