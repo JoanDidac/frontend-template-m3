@@ -1,9 +1,16 @@
 import axios from 'axios';
 
+const baseUrl = `${process.env.REACT_APP_BACKEND_URL}/reviews`;
+
+// const checkReviewExists = async (droneId, userId) => {
+//   const response = await this.api.get(`${baseUrl}/check-review/${droneId}/${userId}`);
+//   return response.data;
+// };
+
 class ReviewsService {
   constructor() {
     this.api = axios.create({
-      baseURL: `${process.env.REACT_APP_BACKEND_URL}/reviews`
+      baseURL: baseUrl
     });
 
     this.api.interceptors.request.use(config => {
@@ -14,7 +21,6 @@ class ReviewsService {
       return config;
     });
   }
-
 getReviews(){
   return this.api.get('/').then(({ data }) => data);
 }
@@ -34,9 +40,14 @@ createReview(body){
 editReview(id, body){
   return this.api.put(`/${id}`, body).then(({ data }) => data);
 }
-  
+
+async checkReviewExists(droneId, userId) {
+  const response = await this.api.get(`${baseUrl}/check-review/${droneId}/${userId}`);
+  return response.data;
+}
 
 }
+
 
 const reviewsService = new ReviewsService();
 

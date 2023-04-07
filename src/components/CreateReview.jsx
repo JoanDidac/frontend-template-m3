@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import reviewService from '../services/reviewsService';
+import reviewsService from '../services/reviewsService';
 
-function CreateReview({ droneId, onSave }) {
+function CreateReview({ droneId, userId, onSave }) {
   const [reviewData, setReviewData] = useState({
     name: '',
     comment: '',
@@ -17,17 +17,26 @@ function CreateReview({ droneId, onSave }) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const newReview = await reviewService.createReview(reviewData);
-      alert('Review submitted successfully!');
-      onSave(newReview);
+      const reviewExists = await reviewsService.checkReviewExists(droneId, userId);
+      if (reviewExists) {
+        alert('You already reviewed this drone!');
+      } else {
+        const newReview = await reviewsService.createReview(reviewData);
+        alert('Review submitted successfully!');
+        onSave(newReview);
+      }
     } catch (error) {
       console.error('Error submitting review:', error);
       alert('Error submitting review, please try again.');
     }
   };
 
+  
+
   return (
+    
     <div>
+    
       <h2>Review Drone</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>

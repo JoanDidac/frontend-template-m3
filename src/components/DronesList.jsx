@@ -9,6 +9,7 @@ function DronesList() {
   const [showCreateDroneForm, setShowCreateDroneForm] = useState(false);
   const [userId, setUserId] = useState(null);
   const [showReviewForm, setShowReviewForm] = useState(false);
+  const [selectedDrone, setSelectedDrone] = useState(null);
 
     // Fetch user ID when the component mounts
     useEffect(() => {
@@ -41,8 +42,13 @@ function DronesList() {
     setShowCreateDroneForm(!showCreateDroneForm);
   };
 
-  const handleReviewButtonClick = () => {
-    setShowReviewForm(!showReviewForm);
+  const handleReviewButtonClick = (droneId) => {
+    if (selectedDrone === droneId) {
+      setShowReviewForm(!showReviewForm);
+    } else {
+      setSelectedDrone(droneId);
+      setShowReviewForm(true);
+    }
   };
 
   const handleReviewSave = (newReview) => {
@@ -56,13 +62,19 @@ function DronesList() {
       <button onClick={handleCreateDroneButtonClick}>Create new Drone</button>
       {showCreateDroneForm && <CreateDrone />}
       <ul>
-        {drones.map(drone => (
+        {drones.map((drone) => (
           <React.Fragment key={drone._id}>
             <h1>{drone.model}</h1>
             <img src={drone.imageUrl} alt={drone.model} />
-            <button onClick={handleReviewButtonClick}>Review this Drone</button>
-            {showReviewForm && (
-              <CreateReview droneId={drone._id} userId={userId} onSave={handleReviewSave} />
+            <button onClick={() => handleReviewButtonClick(drone._id)}>
+              Review this Drone
+            </button>
+            {showReviewForm && selectedDrone === drone._id && (
+              <CreateReview
+                droneId={drone._id}
+                userId={userId}
+                onSave={handleReviewSave}
+              />
             )}
           </React.Fragment>
         ))}
