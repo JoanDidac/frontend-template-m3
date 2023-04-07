@@ -13,10 +13,10 @@ function PostsList() {
     const fetchPosts = async () => {
       try {
         const response = await postService.getPosts();
-        const postsWithMediaAsArray = response.map(post => {
+        const postsWithMediaAsArray = response.map((post) => {
           return {
             ...post,
-            media: Array.isArray(post.media) ? post.media : [post.media]
+            media: Array.isArray(post.media) ? post.media : [post.media],
           };
         });
         setPosts(postsWithMediaAsArray);
@@ -24,7 +24,7 @@ function PostsList() {
         console.error('Error fetching posts:', error);
       }
     };
-    
+
     fetchPosts();
   }, []);
 
@@ -48,6 +48,7 @@ function PostsList() {
             post={post}
             handlePostClick={handlePostClick}
           />
+          
         ))}
       </div>
     </div>
