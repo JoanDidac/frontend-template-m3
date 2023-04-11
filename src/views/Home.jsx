@@ -25,7 +25,7 @@ export default function Home() {
       {/* Add slider component here */}
       {drones.map(elem => {
         return (
-          <div>
+          <div key={elem._id}>
             <p>{elem.model}</p>
             <img src={elem.imageUrl} alt={`${elem.model}`} />
             <p>{elem.brand}</p> 

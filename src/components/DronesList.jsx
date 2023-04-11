@@ -51,9 +51,10 @@ function DronesList() {
     }
   };
 
-  const handleReviewSave = (newReview) => {
+  const handleReviewSave = () => {
     // Reload drone list after a new review is saved
     fetchDrones();
+    setShowReviewForm(false);
   };
 
   return (

@@ -12,11 +12,12 @@ export default function Navbar() {
   };
 
   return (
-    <div>
+    <div className='navbar'>
       <img src={logo} alt="Logo" onClick={handleLogoClick} style={{ cursor: 'pointer' }} />
       <ul>
         <li><NavLink to="/drones">Drones</NavLink></li>
         <li><NavLink to="/posts">Posts</NavLink></li>
+        <li><NavLink to="/myprofile"> My Profile</NavLink></li>
       </ul>
       <input type="checkbox" id="menu-toggle" style={{ display: 'none' }} />
       <label htmlFor="menu-toggle" className="menu-icon">

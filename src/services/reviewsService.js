@@ -21,6 +21,7 @@ class ReviewsService {
       return config;
     });
   }
+  
 getReviews(){
   return this.api.get('/').then(({ data }) => data);
 }

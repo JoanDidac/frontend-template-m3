@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import reviewsService from '../services/reviewsService';
+import toast from 'react-hot-toast';
 
 function CreateReview({ droneId, userId, onSave }) {
   const [reviewData, setReviewData] = useState({
@@ -19,11 +20,12 @@ function CreateReview({ droneId, userId, onSave }) {
     try {
       const reviewExists = await reviewsService.checkReviewExists(droneId, userId);
       if (reviewExists) {
-        alert('You already reviewed this drone!');
+        toast.error('You already reviewed this drone!');
+        onSave();
       } else {
-        const newReview = await reviewsService.createReview(reviewData);
-        alert('Review submitted successfully!');
-        onSave(newReview);
+        await reviewsService.createReview(reviewData);
+        toast.success('Review submitted successfully!');
+        onSave();
       }
     } catch (error) {
       console.error('Error submitting review:', error);

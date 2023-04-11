@@ -29,6 +29,10 @@ class AuthService {
   me() {
     return this.api.get('/me').then((response) => response.data);
   }
+
+  updateProfile(body) {
+    return this.api.put('/myprofile', body).then(({ data }) => data);
+  }
 }
 
 const authService = new AuthService();
