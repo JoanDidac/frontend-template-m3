@@ -42,6 +42,12 @@ editReview(id, body){
   return this.api.put(`/${id}`, body).then(({ data }) => data);
 }
 
+getReviewsByUser() {
+  return this.api.get('/user', {}).then(({ data }) => data);
+}
+
+
+
 async checkReviewExists(droneId, userId) {
   const response = await this.api.get(`${baseUrl}/check-review/${droneId}/${userId}`);
   return response.data;

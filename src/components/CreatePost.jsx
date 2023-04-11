@@ -26,6 +26,7 @@ function CreatePost() {
   };
 
   const handleSubmit = async (event) => {
+    console.log('Post info', postData)
     event.preventDefault();
     try {
       await postService.createPost(postData);

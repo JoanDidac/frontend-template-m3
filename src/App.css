@@ -78,33 +78,7 @@
 .burger-menu:after {
   transform: translateY(5px);
 }
-
-
-/* .navbar {
-  background-color: #333;
-  display:flex;
-  align-content:center;
-  justify-content: space-between;
-  color: rgb(223, 220, 220);
+/* <<<---- Drone-Card --->>> */
+.droneList-card {
+  border:1px solid #333;
 }
-.navbar ul {
-  align-items: center;
-}
-.navbar a {
-  padding-left: 30px;
-  text-decoration: none;
-  list-style: none;
-  color:white;
-}
-.navbar li {
-  display: inline;
- 
-  
-}
-
-.navbar input {}
-.navbar label {}
-.navbar img {
-  
-} */
-.navbar span {}

@@ -31,11 +31,11 @@ function PostsList() {
   };
 
   return (
-    <div>
+    <div className='droneList-container'>
       <h2>All Posts</h2>
       <button onClick={handleCreatePostButtonClick}>Create new Post</button>
       {showCreatePostForm && <CreatePost />}
-      <div>
+      <div className='droneList-card'>
         {posts.map((post) => (
           <PostPreview
             key={post._id}

@@ -35,6 +35,12 @@ editPost(id, body){
   return this.api.put(`/${id}`, body).then(({ data }) => data);
 }
   
+getPostsByUser(userId) {
+  const query = { user: userId };
+  return this.api.get('/', { params: { query } }).then(({ data }) => data);
+}
+
+
 
 }
 
