@@ -1,6 +1,7 @@
 // EditUserData.jsx
 import React, { useState, useEffect } from 'react';
 import authService from '../services/authService';
+import toast from 'react-hot-toast';
 
 const EditUserData = () => {
   const [userData, setUserData] = useState(null);
@@ -17,12 +18,20 @@ const EditUserData = () => {
   const handleUpdateProfile = (e) => {
     e.preventDefault();
 
-    authService.updateProfile(updateData).then((updatedUser) => {
-      console.log('Profile updated successfully', updatedUser);
-      // Update the user data in the state
-      setUserData(updatedUser);
+    authService.updateProfile(updateData)
+    .then((updatedUser) => {
+      // Fetch updated user data from the database
+      authService.me().then((data) => {
+        // Update the user data in the state
+        setUserData(data);
+      });
+      toast.success('Profile updated successfully');
+    })
+    .catch((error) => {
+      toast.error('Failed to update profile');
+      console.log(error);
     });
-  };
+};
 
   // Function to handle input changes
   const handleInputChange = (e) => {
@@ -39,7 +48,7 @@ const EditUserData = () => {
       <h1>My Profile</h1>
       <p>Name: {userData.username}</p>
       <p>Email: {userData.email}</p>
-
+  
       <h2>Update Profile</h2>
       <form onSubmit={handleUpdateProfile}>
         <label>
@@ -52,10 +61,30 @@ const EditUserData = () => {
           />
         </label>
         <br />
+        <label>
+          Email:
+          <input
+            type="email"
+            name="email"
+            defaultValue={userData.email}
+            onChange={handleInputChange}
+          />
+        </label>
+        <br />
+        <label>
+          Password (leave blank to keep the same):
+          <input
+            type="password"
+            name="password"
+            placeholder="New password"
+            onChange={handleInputChange}
+          />
+        </label>
+        <br />
         <button type="submit">Update Profile</button>
       </form>
     </div>
   );
-};
+}
 
 export default EditUserData;
