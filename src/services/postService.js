@@ -36,8 +36,8 @@ editPost(id, body){
 }
   
 getPostsByUser(userId) {
-  const query = { user: userId };
-  return this.api.get('/', { params: { query } }).then(({ data }) => data);
+  return this.api.get('/').then(({ data }) => data.filter(post => post.user._id === userId));
+
 }
 
 
