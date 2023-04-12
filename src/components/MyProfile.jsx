@@ -120,7 +120,7 @@ function MyProfile() {
                     <button onClick={() => handleEditPostClick(post._id)}>
                       Edit Post
                     </button>
-                    <Link to={`/post/${post._id}`}>Check the Post</Link>
+                    <Link to={`/posts/${post._id}`}>Check the Post</Link>
                     {editingPostId === post._id && (
                       <EditPostData postId={post._id} />
                     )}
