@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import reviewsService from '../services/reviewsService';
+import toast from 'react-hot-toast';
 
 const EditReview = () => {
   const { id } = useParams();
@@ -21,9 +22,15 @@ const EditReview = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await reviewsService.editReview(id, review);
-    navigate('/myprofile'); // Update the path to the user's reviews list
-  };
+    try {
+        await reviewsService.editReview(id, review);
+        toast.success('Review updated successfully');
+        navigate('/myprofile');
+      } catch (error) {
+        toast.error('Failed to update review');
+        console.log(error);
+      }
+    };
 
   return (
     <div>
