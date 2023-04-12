@@ -58,7 +58,11 @@ function MyProfile() {
     setShowEditProfile(!showEditProfile);
   };
 
-  const handleMyReviewsClick = () => {
+  const handleMyReviewsClick = async () => {
+    if (isLoggedIn) {
+      const reviews = await reviewsService.getReviewsByUser();
+      setUserReviews(reviews);
+    }
     setShowMyReviews(!showMyReviews);
   };
 
@@ -92,6 +96,8 @@ function MyProfile() {
                   <p>{review.name}</p>
                   <p>{review.comment}</p>
                   <p>{review.rating}/5</p>
+                  <Link to={`/reviews/edit/${review._id}`}>Edit Review</Link>
+
                 </div>
               ))}
             </div>

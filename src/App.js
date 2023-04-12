@@ -15,6 +15,7 @@ import PostDetails from './components/PostDetails';
 // import LandingPage from './components/LandingPage';
 import DroneDetails from './components/DronesDetails';
 import MyProfile from './components/MyProfile';
+import EditReview from './components/EditReview';
 
 function App() {
   return (
@@ -31,8 +32,11 @@ function App() {
         <Route path="/myprofile" element={<IsPrivate><MyProfile /></IsPrivate>} />
         <Route path="/error" element={<ErrorPage />} />
         <Route path="*" element={<NotFound />} />
+        
         <Route path="/drones" element={<DronesList/>} />
         <Route path="/drones/:id" element={<DroneDetails />} />
+        <Route path="/reviews/edit/:id" element={<IsPrivate><EditReview /></IsPrivate>} />
+
         <Route path="/posts" element={<PostsList/>} />
         <Route path="/" element={<PostsList />} />
         <Route path="/posts/:id" element={<PostDetails />} />
