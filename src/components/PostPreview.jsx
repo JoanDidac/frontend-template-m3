@@ -11,11 +11,13 @@ function PostPreview({ post }) {
     <div className="post-card">
       {post.media && post.media.length > 0 && (
         <div className="post-media">
+        <Link to={`/posts/${post._id}`}>
           <img
             src={post.media[0]}
             alt={post.title}
             onLoad={handleImageLoad}
           />
+          </Link>
         </div>
       )}
       <div className="post-content">
