@@ -241,6 +241,8 @@
   max-height: 200px;
   object-fit: cover;
   border-radius: 5px;
+  background-image: linear-gradient(to right, #a7a7a7, #3a3a3a);
+  
 }
 
 .drone-buttons {
