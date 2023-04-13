@@ -231,10 +231,11 @@ body {
 }
 
 .postDetails-container > div {
-  display: flex; 
-  flex-direction: column;
-  align-items: center; 
-  justify-content: center; 
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  align-items: center;
+  justify-items: center;
   background-color: #333;
   border-radius: 5px;
   padding: 20px;
@@ -260,13 +261,20 @@ body {
 }
 
 .content-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
   width: 100%;
+  align-items: center;
+  justify-items: center;
 }
+
 
 .postDetails-container p {
   white-space: pre-wrap;
   font-size: 18px;
   line-height: 1.5;
-  width: 100%;
+  width: 80%;
+  text-align: center;
   
 }
