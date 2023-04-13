@@ -35,7 +35,7 @@ function MyProfile() {
     const fetchUserReviews = async () => {
       if (isLoggedIn) {
         console.log(user._id);
-        const reviews = await reviewsService.getReviewsByUser();
+        const reviews = await reviewsService.getReviewsByUser(user._id);
         console.log("Reviews", reviews);
         setUserReviews(reviews);
       }
