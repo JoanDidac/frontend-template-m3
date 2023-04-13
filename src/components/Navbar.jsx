@@ -6,8 +6,13 @@ import logo from "../assets/icon-dark2.png";
 export default function Navbar() {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
   const navigate = useNavigate();
+  const [logoClicked, setLogoClicked] = useState(false);
 
   const handleLogoClick = () => {
+    setLogoClicked(true);
+    setTimeout(() => {
+      setLogoClicked(false);
+    }, 1500);
     navigate("/");
   };
 
@@ -19,7 +24,7 @@ export default function Navbar() {
 
   return (
     <div className={`navbar${menuOpen ? " menu-open" : ""}`}>
-      <img src={logo} alt="Logo" onClick={handleLogoClick} className="logo" />
+      <img src={logo} alt="Logo" onClick={handleLogoClick} className={`logo${logoClicked ? " clicked" : ""}`}/>
       <nav>
         <ul>
           <li>
