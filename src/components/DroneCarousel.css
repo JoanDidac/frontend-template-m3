@@ -1,0 +1,36 @@
+/* DroneCarousel.css */
+.DroneCarousel {
+
+    width: 80vw;
+    padding: 20px;
+  }
+  
+  .drone-img-carousel {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .carousel-item {
+    padding: 0 10px;
+    width: 300px;
+  }
+  
+  .carousel-item h2 {
+    font-size: 18px;
+    text-align: center;
+  }
+  
+  .carousel-item p {
+    text-align: center;
+  }
+  
+  .carousel-item button {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* .react-multi-carousel-list {
+    max-width: 100%; 
+  } */
+  

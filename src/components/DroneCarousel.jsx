@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../App.css'
+import './DroneCarousel.css';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import droneService from '../services/droneService';
@@ -8,15 +9,16 @@ import droneService from '../services/droneService';
   export const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
+      breakpoint: { max: 4000, min: 1024 },
       items: 5,
+      slidesToSlide : 2
     },
     desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
+      breakpoint: { max: 1024, min: 800 },
+      items: 4,
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
+      breakpoint: { max: 800, min: 464 },
       items: 2,
     },
     mobile: {
@@ -46,9 +48,9 @@ import droneService from '../services/droneService';
   return (
     <div className="DroneCarousel">
       <h1> Drone Carousel </h1>
-      <Carousel responsive={responsive}>
+      <Carousel responsive={responsive} itemClass="carousel-item-padding-40-px" keyBoardControl={true} autoPlay={true} autoPlaySpeed={8000} transitionDuration={1000} infinite={true} showDots={true} swipeable={true} draggable={true}>
       {drones.map((drone, index) => (
-        <div key={index}>
+        <div key={index} className="carousel-item">
             <img className='drone-img-carousel' src={drone.imageUrl} alt={drone.model} />
             console.log({drone.model});
              <h2>{drone.model}</h2>
