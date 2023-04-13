@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import LandingPage from '../components/LandingPage';
 import droneService from '../services/droneService';
+import  DroneCarousel from '../components/DroneCarousel.jsx';
+import Carousel from 'react-multi-carousel';
+import { responsive }  from '../components/DroneCarousel';
 
 export default function Home() {
   const [drones, setDrones] = useState([])
@@ -22,7 +25,9 @@ export default function Home() {
   return (
     <div>
       <LandingPage />
-      {/* Add slider component here */}
+      <Carousel responsive={responsive}>
+      <DroneCarousel />
+      </Carousel>
       {drones.map(elem => {
         return (
           <div key={elem._id}>

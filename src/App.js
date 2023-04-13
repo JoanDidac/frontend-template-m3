@@ -16,9 +16,7 @@ import PostDetails from './components/PostDetails';
 import DroneDetails from './components/DronesDetails';
 import MyProfile from './components/MyProfile';
 import EditReview from './components/EditReview';
-import DroneCarousel from './components/DroneCarousel';
-import Carousel from 'react-multi-carousel';
-import { responsive }  from './components/DroneCarousel';
+
 
 
 function App() {
@@ -26,9 +24,7 @@ function App() {
     <div className="App">
       <Toaster/>
       <Navbar />
-      <Carousel responsive={responsive}>
-      <DroneCarousel />
-      </Carousel>
+      
       <Routes>
         <Route path="/" element={<Home />} />
         
