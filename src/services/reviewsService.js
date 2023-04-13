@@ -42,16 +42,20 @@ editReview(id, body){
   return this.api.put(`/edit/${id}`, body).then(({ data }) => data);
 }
 
-getReviewsByUser() {
-  return this.api.get('/user', {}).then(({ data }) => data);
+getReviewsByUser(id) {
+  return this.api.get(`/user/${id}`).then(({ data }) => data);
 }
 
 
-
-async checkReviewExists(droneId, userId) {
-  const response = await this.api.get(`${baseUrl}/check-review/${droneId}/${userId}`);
-  return response.data;
+checkReviewExists(droneId, userId) {
+  return this.api.get(`${baseUrl}/check-review/${droneId}/${userId}`).then(({ data }) => data);
 }
+
+getReviewsByDroneId(droneId) {
+  return this.api.get(`/drone/${droneId}`)
+    .then(({ data }) => data);
+}
+
 
 }
 

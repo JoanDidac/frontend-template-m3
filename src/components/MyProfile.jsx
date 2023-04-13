@@ -60,11 +60,13 @@ function MyProfile() {
 
   const handleMyReviewsClick = async () => {
     if (isLoggedIn) {
-      const reviews = await reviewsService.getReviewsByUser();
+      const reviews = await reviewsService.getReviewsByUser(user._id);
       setUserReviews(reviews);
     }
     setShowMyReviews(!showMyReviews);
   };
+  
+  
 
   const handleMyPostsClick = async () => {
     if (isLoggedIn) {
@@ -91,11 +93,13 @@ function MyProfile() {
           ) : (
             <div>
               {userReviews.map((review) => (
+                
                 <div key={review._id}>
                   <img src={review.drone.imageUrl} alt="reviewPicture" />
                   <p>{review.name}</p>
                   <p>{review.comment}</p>
                   <p>{review.rating}/5</p>
+                  
                   <Link to={`/reviews/edit/${review._id}`}>Edit Review</Link>
 
                 </div>
