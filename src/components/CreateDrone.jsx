@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import droneService from '../services/droneService';
+import toast from 'react-hot-toast';
 
 function CreateDrone() {
+  const [submitted, setSubmitted] = useState(false);
+  const [formHidden, setFormHidden] = useState(false);
   const [droneData, setDroneData] = useState({
+    
     model: "",
     brand: "",
     imageUrl: "",
@@ -32,17 +36,24 @@ function CreateDrone() {
     event.preventDefault();
     try {
       await droneService.createDrone(droneData);
-      alert("Drone created successfully!");
+      setSubmitted(true);
+      setTimeout(() => {
+        toast.success("Drone created successfully!");
+        setFormHidden(true);
+      }, 1000);
     } catch (error) {
       console.error("Error creating drone:", error);
-      alert("Error creating drone, please try again.");
+      toast.error("Error creating drone, please try again.");
     }
   };
 
   return (
-    <div>
-      <h2>Create a new Drone</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="create-drone">
+    {!formHidden && (
+      <>
+      <h2 className="create-drone-title" >Create a new Drone</h2>
+    
+      <form className={`create-drone-form${submitted ? " slide-up" : ""}`} onSubmit={handleSubmit}>
         <label>Model:</label>
         <input
           type="text"
@@ -108,8 +119,10 @@ function CreateDrone() {
         />
         
         
-        <button type="submit">Create Drone</button>
+        <button className="create-drone-submit" type="submit">+ Add Drone</button>
       </form>
+      </>
+      )}
     </div>
   );
 }
