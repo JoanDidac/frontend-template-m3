@@ -133,15 +133,14 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(583px, 1fr));
   gap: 20px;
 }
+
 .post-card {
   background-color: #161b22;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-
   display: flex;
   flex-direction: column;
-
 }
 
 .post-card img {
@@ -150,33 +149,21 @@ body {
   object-fit: cover;
 }
 
-.post-card .post-info {
+.post-card .post-content {
   padding: 20px;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
 }
 
-.post-card h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
+.post-card .post-content h3 {
   margin-bottom: 10px;
-  color: #58a6ff;
-  text-transform: uppercase;
 }
 
-.post-card p {
+.post-card .post-content p {
   font-size: 1rem;
   line-height: 1.5;
   color: #ffffff;
-}
-
-
-
-.post-card .post-content {
-  padding: 20px;
-  /* display:block; */
-  flex-direction:column;
-  flex-grow: 1;
-  justify-content: space-between;
-  
 }
 
 .post-card .post-content a {
@@ -190,9 +177,7 @@ body {
   text-align: center;
   border-radius: 3px;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
-
   margin-left: 8px;
-  ;
   clip-path: polygon(15px 0, 100% 0, calc(100% - 15px) 100%, 0 100%);
 }
 
@@ -211,5 +196,24 @@ body {
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
+/* New styles */
 
+.single-post .post-card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 1000px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.single-post .post-card img {
+  height: auto;
+}
+
+.single-post .post-card .post-content {
+  padding: 40px 20px;
+}
 

@@ -6,6 +6,7 @@ import PostPreview from './PostPreview';
 function PostsList() {
   const [posts, setPosts] = useState([]);
   const [showCreatePostForm, setShowCreatePostForm] = useState(false);
+  // const [showPostPreview, setShowPostPreview] = useState(false); 
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -29,6 +30,9 @@ function PostsList() {
   const handleCreatePostButtonClick = () => {
     setShowCreatePostForm(!showCreatePostForm);
   };
+  // const handlePostPreviewClick = () => {
+  //   setShowPostPreview(!showPostPreview);
+  // };
 
   return (
     <div className='postsList-container'>

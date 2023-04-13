@@ -8,7 +8,7 @@ function PostPreview({ post }) {
   };
 
   return (
-    <div className="post-card">
+    <div className="post-card single-post">
       {post.media && post.media.length > 0 && (
         <div className="post-media">
         <Link to={`/posts/${post._id}`}>
@@ -22,7 +22,7 @@ function PostPreview({ post }) {
       )}
       <div className="post-content">
         <h3>{post.title}</h3>
-        <p>{post.message}</p>
+        <p className="post-message">{post.message}</p>
         <Link to={`/posts/${post._id}/edit`}>Edit Post</Link>
         <Link to={`/posts/${post._id}`}>See more</Link>
       </div>
