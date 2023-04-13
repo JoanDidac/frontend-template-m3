@@ -47,7 +47,7 @@ import droneService from '../services/droneService';
 
   return (
     <div className="DroneCarousel">
-      <h1> Drone Carousel </h1>
+      <h1> Drone Selection </h1>
       <Carousel responsive={responsive} itemClass="carousel-item-padding-40-px" keyBoardControl={true} autoPlay={true} autoPlaySpeed={8000} transitionDuration={1000} infinite={true} showDots={true} swipeable={true} draggable={true}>
       {drones.map((drone, index) => (
         <div key={index} className="carousel-item">

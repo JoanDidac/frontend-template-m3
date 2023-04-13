@@ -6,7 +6,7 @@
 
 .navbar {
   background-color: #2d2d2d;
-  color: #ffffff;
+  color: #c0bebe;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,7 +22,7 @@
 .navbar a {
   text-decoration: none;
   list-style: none;
-  color: #ffffff;
+  color: #ecececd1;
   padding: 0 10px;
   font-weight: 500;
   font-size: 20px;
@@ -146,6 +146,128 @@
 .droneList-card {
   border:1px solid #333;
 }
+
+/* <<< Drones List --->>> */
+
+.add-drone-button {
+  background-image: linear-gradient(to left, #6a6969, #333);
+  border: none;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(247, 247, 247, 0.1);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 1px;
+}
+
+.add-drone-button:hover {
+  background-image: linear-gradient(to right, #6a6969, #2d2d2d);
+  box-shadow: 10px 6px 8px rgba(255, 255, 255, 0.2);
+}
+
+
+.droneList-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.droneList-header p {
+  letter-spacing: 5px;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.droneList-title {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-align: center;
+  background-image: linear-gradient(270deg, rgb(7, 255, 193), rgb(6, 164, 216), fuchsia, purple);
+  background-size: 400% 400%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: 56px;
+  font-weight: 700;
+  padding: 5px 10px;
+  margin: 10px 0;
+  margin-bottom: -20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: gradientAnimation 15s ease infinite;
+}
+
+.drone-item {
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+  width: calc(33.3333% - 20px);
+  box-sizing: border-box;
+}
+
+.drone-item h1 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-align: center;
+  background-image: linear-gradient(to right,purple, fuchsia , rgb(6, 164, 216), rgb(98, 255, 216));
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: 36px;
+  font-weight: 700;
+  padding: 5px 10px;
+  margin: 10px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+.drone-image {
+  display: block;
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.drone-buttons {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 1;
+}
+
+.drone-button {
+  background-color: #2d2d2d;
+  border: none;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.drone-button:hover {
+  background-color: #444;
+}
+
 
 /* <<<---- PostsList --->>> */
 

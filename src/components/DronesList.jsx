@@ -81,21 +81,33 @@ function DronesList() {
   };
 
   return (
-    <div>
-      <h2>All Drones</h2>
-      <button onClick={handleCreateDroneButtonClick}>Create new Drone</button>
+    <div className="droneList-header">
+      <h2 className="droneList-title">Drones Selection</h2>
+      <p>Feel the World, Ride the Wind</p>
+      <button className="add-drone-button" onClick={handleCreateDroneButtonClick}>+ Add new Drone</button>
       {showCreateDroneForm && <CreateDrone />}
-      <ul>
+      <div className="drones-list">
         {drones.map((drone) => (
           <React.Fragment key={drone._id}>
-            <h1>{drone.model}</h1>
-            <img src={drone.imageUrl} alt={drone.model} />
-            <button onClick={() => handleReviewButtonClick(drone._id)}>
-              Review this Drone
-            </button>
-            <button onClick={() => handleViewReviewsClick(drone._id)}>
-              View Reviews
-            </button>
+            <div className="drone-item">
+              <h1>{drone.model}</h1>
+              
+              <img src={drone.imageUrl} alt={drone.model} className="drone-image" />
+              <div className="drone-buttons">
+                <button
+                  className="drone-button"
+                  onClick={() => handleReviewButtonClick(drone._id)}
+                >
+                  Review this Drone
+                </button>
+                <button
+                  className="drone-button"
+                  onClick={() => handleViewReviewsClick(drone._id)}
+                >
+                  View Reviews
+                </button>
+              </div>
+            </div>
             {showReviewForm && selectedDrone === drone._id && (
               <CreateReview
                 droneId={drone._id}
@@ -119,9 +131,10 @@ function DronesList() {
               )}
           </React.Fragment>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
+  
 
 export default DronesList;
