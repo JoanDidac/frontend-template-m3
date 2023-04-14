@@ -12,7 +12,8 @@ export default function LandingPage() {
       try {
         const response = await droneService.getDrones();
         // display hardcoded drone as the landing page drone, in the future will display the drone with more likes.
-        setDrone(response[8]);
+        const droneWithVideo = { ...response[0], videoUrl: 'https://res.cloudinary.com/ddcimekqb/video/upload/v1681432329/colorful-trees-fall_kbgrzl.mp4' };
+        setDrone(droneWithVideo);
       } catch (error) {
         console.error(error);
       }
@@ -30,11 +31,20 @@ export default function LandingPage() {
   return (
     drone && (
       <div className="landing-page">
-        <img src={drone.imageUrl} alt={drone.model} className="landing-image" />
-        <h2 className="drone-model">{drone.model}</h2>
-        <button onClick={handleSeeMore} className="see-more-btn">
-          See more
-        </button>
+        <video
+          src={drone.videoUrl}
+          autoPlay
+          muted
+          loop
+          className="landing-video"
+        />
+        <div className="overlay">
+        <h3>Footage recorded with: </h3>
+          <h2 className="drone-model">{drone.model}</h2>
+          <button onClick={handleSeeMore} className="see-more-btn">
+            Check this Drone
+          </button>
+        </div>
       </div>
     )
   );

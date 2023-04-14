@@ -29,9 +29,6 @@
   margin-left: 10vw;
   
 }
-/* .navbar a:first-child {
-  margin-right: -150px;;
-} */
 
 .navbar img.logo {
   width: 15%;
@@ -181,6 +178,50 @@
   .menu-content {
     display: none;
   }
+}
+/* <<<---- Landing Page & Video --->>> */
+.landing-page {
+  position: relative;
+  overflow: hidden;
+}
+
+.landing-video {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.drone-model {
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+}
+
+.see-more-btn {
+  background-color: #1a73e8;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 2px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 
