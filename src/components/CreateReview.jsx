@@ -38,11 +38,11 @@ function CreateReview({ droneId, userId, onSave }) {
 
   return (
     
-    <div>
+    <div className="create-review-container">
     
-      <h2>Review Drone</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
+      <h2 className="create-review-title" >Review Drone</h2>
+      <form onSubmit={handleSubmit} className="create-review-form">
+        <label htmlFor="name" className="create-review-label" >Title:</label>
         <input
           type="text"
           id="name"
@@ -53,7 +53,7 @@ function CreateReview({ droneId, userId, onSave }) {
         />
         <br />
 
-        <label htmlFor="comment">Comment:</label>
+        <label htmlFor="comment" className="create-review-label">Comment:</label>
         <textarea
           id="comment"
           name="comment"
@@ -63,7 +63,7 @@ function CreateReview({ droneId, userId, onSave }) {
         />
         <br />
 
-        <label htmlFor="rating">Rating:</label>
+        <label htmlFor="rating" className="create-review-label" >Rating:</label>
         <input
           type="number"
           id="rating"
@@ -73,10 +73,11 @@ function CreateReview({ droneId, userId, onSave }) {
           value={reviewData.rating}
           onChange={handleChange}
           required
+          className="create-review-input"
         />
         <br />
 
-        <button type="submit">Submit Review</button>
+        <button type="submit" className="create-review-submit">Submit Review</button>
       </form>
     </div>
   );
