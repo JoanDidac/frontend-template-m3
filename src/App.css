@@ -488,7 +488,7 @@
   right: 0;
   bottom: 0;
   background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('https://cdn.sanity.io/images/mgxz50fq/production/dad0b7289266d8e45b9f36c9283efbafb888d311-5000x3074.png?w=2560&h=1574&auto=format');
-  background-size:110% 160% ;
+  background-size:cover;
   background-position: center;
   z-index: -1;
 }
@@ -556,7 +556,8 @@
 .create-review-submit:hover {
   font-size: 14.5px;
   color: #2d2d2d;
-  background-image: radial-gradient(circle, rgb(28, 248, 28), darkorchid);
+  background-color: transparent;
+  background-image: radial-gradient(circle,transparent -15%, rgb(112, 254, 254), darkorchid);
 }
 
 
