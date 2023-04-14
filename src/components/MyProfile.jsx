@@ -21,7 +21,6 @@ function MyProfile() {
   const [userPosts, setUserPosts] = useState([]);
   const [editingPostId, setEditingPostId] = useState(null);
 
-
   useEffect(() => {
     const fetchUserReviews = async () => {
       if (isLoggedIn) {
@@ -56,8 +55,6 @@ function MyProfile() {
     }
     setShowMyReviews(!showMyReviews);
   };
-  
-  
 
   const handleMyPostsClick = async () => {
     if (isLoggedIn) {
@@ -72,11 +69,19 @@ function MyProfile() {
   };
 
   return (
-    <div>
+    <div className="my-profile">
       <h2>My Profile</h2>
-      <button onClick={handleEditProfileClick}>Edit My Profile</button>
+      <div className="glowing-btn-container">
+      <div className="glowing-btn" onClick={handleEditProfileClick}>
+        <span className="glowing-txt">Edit My Profile</span>
+        </div>
+      </div>
       {showEditProfile && <EditUserData />}
-      <button onClick={handleMyReviewsClick}>My Reviews</button>
+      <div className="glowing-btn-container">
+      <div className="glowing-btn" onClick={handleMyReviewsClick}>
+        <span className="glowing-txt">My Reviews</span>
+        </div>
+      </div>
       {showMyReviews && (
         <div>
           {userReviews.length === 0 ? (
@@ -84,22 +89,24 @@ function MyProfile() {
           ) : (
             <div>
               {userReviews.map((review) => (
-                
-                <div key={review._id}>
+                <div key={review._id} className="review-item">
                   <img src={review.drone.imageUrl} alt="reviewPicture" />
                   <p>{review.name}</p>
                   <p>{review.comment}</p>
                   <p>{review.rating}/5</p>
-                  
-                  <Link to={`/reviews/edit/${review._id}`}>Edit Review</Link>
 
+                  <Link to={`/reviews/edit/${review._id}`}>Edit Review</Link>
                 </div>
               ))}
             </div>
           )}
         </div>
       )}
-      <button onClick={handleMyPostsClick}>My Posts</button>
+      <div className="glowing-btn-container">
+      <div className="glowing-btn" onClick={handleMyPostsClick}>
+        <span className="glowing-txt">My Posts</span>
+        </div>
+      </div>
       {showMyPosts && (
         <div>
           {userPosts.length === 0 ? (
@@ -113,8 +120,8 @@ function MyProfile() {
           ) : (
             <div className="posts-grid">
               {userPosts.map((post) => (
-                <div key={post._id}> 
-                  <img src={post.media} alt={post.title} /> 
+                <div key={post._id} className="posts-grid">
+                  <img src={post.media} alt={post.title} />
                   <div className="post-info">
                     <h3>{post.title}</h3>
                     <p>{post.body}</p>
