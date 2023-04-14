@@ -319,7 +319,7 @@
   font-weight: 700;
   padding: 5px 10px;
   margin: 10px 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 40px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -357,6 +357,95 @@
 .drone-button:hover {
   background-color: #444;
 }
+
+/* <<<--- DroneList View review Flipcard --->>> */
+
+.reviews-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 15px;
+  background-color: #2d2d2d;
+  border-radius: 5px;
+  box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 90%;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 1000;
+  padding: 20px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.review-item {
+  background-image: linear-gradient(to right,purple, fuchsia , rgb(6, 164, 216), rgb(98, 255, 216));
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+
+.review-username,
+.review-name,
+.review-comment,
+.review-rating {
+  margin: 0;
+  color: #2d2d2d;
+}
+
+.review-username {
+  font-weight: bold;
+  color: #007bff;
+}
+.close-reviews {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  color: yellow;
+  cursor: pointer;
+}
+.reviews-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.reviews-container {
+  position: relative;
+  max-width: 80%;
+  max-height: 80%;
+  overflow-y: auto;
+  transform: translateY(-100%) scale(0.5);
+  opacity: 0;
+  transition: opacity 0.6s, transform 0.6s; /* Add this line */
+}
+
+.reviews-container.visible {
+  transform: translateY(0) scale(1); 
+  opacity: 1;
+}
+
+
+
+/* USER NAME NOT VISBLE!!!! */
 
 /* <<<--- Add new drone Form --->>>  */
 

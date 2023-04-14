@@ -28,7 +28,7 @@ export default function Home() {
       <Carousel responsive={responsive}>
       <DroneCarousel />
       </Carousel>
-      {drones.map(elem => {
+      {/* {drones.map(elem => {
         return (
           <div key={elem._id}>
             <p>{elem.model}</p>
@@ -41,7 +41,7 @@ export default function Home() {
             <p>Dimensions: {elem.specs?.dimensions || "N/A"}</p>
           </div>
         );
-      })}
+      })} */}
     </div>
   )
 }

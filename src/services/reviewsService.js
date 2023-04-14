@@ -52,8 +52,11 @@ checkReviewExists(droneId, userId) {
 }
 
 getReviewsByDroneId(droneId) {
+  
   return this.api.get(`/drone/${droneId}`)
-    .then(({ data }) => data);
+  
+    .then(({ data }) =>  data);
+    
 }
 
 
