@@ -17,19 +17,10 @@ function MyProfile() {
   const [showMyReviews, setShowMyReviews] = useState(false);
   const [showMyPosts, setShowMyPosts] = useState(false);
   const { user, isLoggedIn } = useAuth();
-  //const [userProfile, setUserProfile] = useState(null);
   const [userReviews, setUserReviews] = useState([]);
   const [userPosts, setUserPosts] = useState([]);
   const [editingPostId, setEditingPostId] = useState(null);
-  //   const [hasPosts] = useState(false);
 
-  //   useEffect(() => {
-  //     const fetchUserProfile = async () => {
-  //       const data = await authService.me();
-  //       setUserProfile(data);
-  //     };
-  //     fetchUserProfile();
-  //   }, []);
 
   useEffect(() => {
     const fetchUserReviews = async () => {
@@ -122,8 +113,8 @@ function MyProfile() {
           ) : (
             <div className="posts-grid">
               {userPosts.map((post) => (
-                <div key={post._id} className="post-card">
-                  <img src={post.media} alt="postPicture" />
+                <div key={post._id}> 
+                  <img src={post.media} alt={post.title} /> 
                   <div className="post-info">
                     <h3>{post.title}</h3>
                     <p>{post.body}</p>
