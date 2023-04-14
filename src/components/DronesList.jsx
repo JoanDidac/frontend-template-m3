@@ -57,7 +57,7 @@ function DronesList() {
       setShowReviewForm(!showReviewForm);
     } else {
       setSelectedDrone(droneId);
-      setShowReviewForm(false); // Hide the review form when displaying the reviews
+      setShowReviewForm(true); // Hide the review form when displaying the reviews
     }
   };
 
