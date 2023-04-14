@@ -17,6 +17,8 @@ function DronesList() {
   const [userReviews, setUserReviews] = useState([]);
   const [showMyReviews, setShowMyReviews] = useState(false);
   const { isLoggedIn } = useAuth();
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
  
 
   // Fetch user ID when the component mounts
@@ -82,11 +84,21 @@ function DronesList() {
     setShowMyReviews(!showMyReviews);
   };
 
+  const handleFormSubmitted = () => {
+    setFormSubmitted(true);
+    setTimeout(() => setFormSubmitted(false), 1000); // Reset the state after the animation duration
+  };
+
+  
   const handleReviewSave = () => {
     // Reload drone list after a new review is saved
     fetchDrones();
     setShowReviewForm(false);
+    setFormSubmitted(true);
+    setTimeout(() => setFormSubmitted(false), 2000); // Reset the state after the animation duration
   };
+  
+
 
 return (
   <div className="droneList-header">
@@ -127,9 +139,11 @@ return (
           </div>
           {showReviewForm && selectedDrone === drone._id && (
             <CreateReview
+              className={`create-review-form${formSubmitted ? " create-review-form-submitted" : ""}`}
               droneId={drone._id}
               userId={userId}
               onSave={handleReviewSave}
+              onFormSubmitted={handleFormSubmitted}
             />
           )}
           {showReviewsList && selectedDrone === drone._id && (

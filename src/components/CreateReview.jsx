@@ -23,6 +23,9 @@ function CreateReview({ droneId, userId, onSave }) {
       if (reviewExists) {
         toast.error('You already reviewed this drone!');
         onSave();
+        if (onSave) {
+          onSave(true);
+        }
       } else {
         await reviewsService.createReview(reviewData);
         toast.success('Review submitted successfully!');
@@ -32,6 +35,7 @@ function CreateReview({ droneId, userId, onSave }) {
       console.error('Error submitting review:', error);
       alert('Error submitting review, please try again.');
     }
+    
   };
 
   
