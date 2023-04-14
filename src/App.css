@@ -931,53 +931,12 @@ body {
 
 /* <<<--- My Profile buttons Styles --->>> */
 
-/* .profile-btn {
-  position: relative;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 200px;
-  height: 50px;
-  margin: 10px;
-  background-color: #1e90ff;
-  border-radius: 4px;
-  overflow: hidden;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
-}
-
-.profile-btn:hover {
-  background-color: #0078d4;
-}
-
-.profile-btn span {
-  position: relative;
-  font-size: 18px;
-  color: #ffffff;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.profile-btn:before {
-  content: '';
-  position: absolute;
-  top: -100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-}
-
-.profile-btn:hover:before {
-  top: 100%;
-} */
-
 @import url("https://fonts.googleapis.com/css?family=Raleway");
 
 :root {
   --glow-color: hsl(186 100% 69%);
+  --glow-color-reviews: hsl(240 100% 69%);
+  --glow-color-posts: hsl(300 100% 69%);
 }
 
 *,
@@ -991,7 +950,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 33vh;
   
 }
 
@@ -1192,3 +1151,37 @@ body {
   }
 }
 
+/* Neon buttons with different colors */
+
+.glowing-btn-reviews {
+  color: var(--glow-color-reviews);
+  border-color: var(--glow-color-reviews);
+  -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color-reviews),
+    0px 0px 0.5em 0px var(--glow-color-reviews);
+  -moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color-reviews),
+    0px 0px 0.5em 0px var(--glow-color-reviews);
+  box-shadow: inset 0px 0px 0.5em 0px var(--glow-color-reviews),
+    0px 0px 0.5em 0px var(--glow-color-reviews);
+}
+.glowing-btn-reviews::before,
+.glowing-btn-reviews::after {
+  background: var(--glow-color-reviews);
+  box-shadow: 0 0 2em 0.2em var(--glow-color-reviews);
+}
+
+.glowing-btn-posts {
+  color: var(--glow-color-posts);
+  border-color: var(--glow-color-posts);
+  -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color-posts),
+    0px 0px 0.5em 0px var(--glow-color-posts);
+  -moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color-posts),
+    0px 0px 0.5em 0px var(--glow-color-posts);
+  box-shadow: inset 0px 0px 0.5em 0px var(--glow-color-posts),
+    0px 0px 0.5em 0px var(--glow-color-posts);
+}
+
+.glowing-btn-posts::before,
+.glowing-btn-posts::after {
+  background: var(--glow-color-posts);
+  box-shadow: 0 0 2em 0.2em var(--glow-color-posts);
+}
