@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../assets/icon-dark2.png';
+// import logo from '../assets/icon-dark2.png';
 import instagramIcon from '../assets/logo-instagram.png';
 import youtubeIcon from '../assets/logo-youtube.png';
 import facebookIcon from '../assets/logo-facebook.png';
