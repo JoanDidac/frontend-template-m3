@@ -73,7 +73,9 @@ footer {
   }
   
   .social-icons a:hover img {
-    filter: grayscale(0) brightness(1.2); /* Remove the gray filter and increase brightness on hover */
+    filter: grayscale(0);
+    border-radius: 100px;
+    box-shadow: 3px 3px 40px rgba(255, 255, 255, 0.339);
   }
   
   .divider {
