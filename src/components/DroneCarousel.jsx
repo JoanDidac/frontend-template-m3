@@ -54,7 +54,7 @@ import Rating from './Rating';
         <div key={index} className="carousel-item">
             <img className='drone-img-carousel' src={drone.imageUrl} alt={drone.model} />
              <h2>{drone.model}</h2>
-             <Rating className="review-rating" reviews={reviews} /> 
+             <Rating className="review-rating" reviews={drone.reviews} /> 
 
              <button> Check this Drone </button>
         </div>
