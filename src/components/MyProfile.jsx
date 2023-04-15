@@ -3,14 +3,9 @@ import postService from "../services/postService";
 import reviewsService from "../services/reviewsService.js";
 import EditUserData from "./EditUserData";
 import { useAuth } from "../hooks/useAuth";
-import handleCreatePostButtonClick from "./PostsList";
-import showCreatePostForm from "./PostsList";
 import CreatePost from "./CreatePost";
 import { Link } from "react-router-dom";
 import EditPostData from "./EditPostData";
-// import PostPreview from './PostPreview';
-// import posts from './CreatePost';
-//import authService from '../services/authService';
 
 function MyProfile() {
   const [showEditProfile, setShowEditProfile] = useState(false);
@@ -20,6 +15,7 @@ function MyProfile() {
   const [userReviews, setUserReviews] = useState([]);
   const [userPosts, setUserPosts] = useState([]);
   const [editingPostId, setEditingPostId] = useState(null);
+  const [showCreatePostForm, setShowCreatePostForm] = useState(false);
 
   useEffect(() => {
     const fetchUserReviews = async () => {
@@ -68,22 +64,29 @@ function MyProfile() {
     setEditingPostId(postId);
   };
 
+  const handleCreatePostButtonClick = () => {
+    setShowCreatePostForm(!showCreatePostForm);
+  };
+  
+
+
+
   return (
     <div className="my-profile">
       <h2>My Profile</h2>
       <div className="glowing-btn-container">
         <div className="glowing-btn glowing-btn-posts glowing-btn-my-posts" onClick={handleMyPostsClick}>
-          <span className="glowing-txt">My Posts</span>
+          <span className="glowing-txt">My Posts ⌽</span>
         </div>
       </div>
       <div className="glowing-btn-container">
         <div className="glowing-btn glowing-btn-reviews glowing-btn-my-reviews" onClick={handleMyReviewsClick}>
-          <span className="glowing-txt">My Reviews</span>
+          <span className="glowing-txt">My Reviews ⌘</span>
         </div>
       </div>
       <div className="glowing-btn-container">
         <div className="glowing-btn glowing-btn-edit-profile" onClick={handleEditProfileClick}>
-          <span className="glowing-txt">Edit My Profile</span>
+          <span className="glowing-txt">Edit My Profile ⍜</span>
         </div>
       </div>
       {showEditProfile && <EditUserData />}
