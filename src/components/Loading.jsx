@@ -1,23 +1,19 @@
 import React from 'react';
-import ClipLoader from "react-spinners/ClipLoader";
+import PropagateLoader from "react-spinners/PropagateLoader";
 import './Loading.css';
 
-const override = {
-  display: "block",
-  margin: "0 auto",
-  borderColor: "red",
-};
+// const override = {
+//   display: "block",
+//   margin: "0 auto",
+//   borderColor: "red",
+// };
 
 const Loading = ({ loading, color = "#ffffff", size = 150 }) => {
   return (
     <div className="loading-container">
-      <ClipLoader
-        color={color}
-        loading={loading}
-        css={override}
-        size={size}
-        aria-label="Loading Spinner"
-        data-testid="loader"
+      <PropagateLoader
+        color="rgba(130, 0, 151, 1)"
+        speedMultiplier={0.9}
       />
     </div>
   );

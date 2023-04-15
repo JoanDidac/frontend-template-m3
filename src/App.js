@@ -13,11 +13,11 @@ import IsPrivate from './components/IsPrivate';
 import DronesList from './components/DronesList';
 import PostsList from './components/PostsList';
 import PostDetails from './components/PostDetails';
-// import LandingPage from './components/LandingPage';
 import DroneDetails from './components/DronesDetails';
 import MyProfile from './components/MyProfile';
 import EditReview from './components/EditReview';
 import Footer from './components/Footer';
+
 
 
 function App() {
@@ -46,8 +46,8 @@ function App() {
       </Routes>
       <Footer></Footer>
     </div>
-    
-  );
+  )
 }
+  
 
 export default App;
