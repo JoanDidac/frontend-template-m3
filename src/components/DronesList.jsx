@@ -6,6 +6,8 @@ import CreateReview from "./CreateReview";
 import reviewsService from "../services/reviewsService";
 import { useAuth } from "../hooks/useAuth";
 import Rating from "./Rating";
+import { CircleLoader } from 'react-spinners';
+
 
 function DronesList() {
   const [drones, setDrones] = useState([]);
@@ -19,6 +21,8 @@ function DronesList() {
   const [showMyReviews, setShowMyReviews] = useState(false);
   const { isLoggedIn } = useAuth();
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [loading, setLoading] = useState(true);
+
 
 
  
@@ -41,6 +45,7 @@ function DronesList() {
     try {
       const response = await droneService.getDrones();
       setDrones(response);
+      setLoading(false)
     } catch (error) {
       console.error("Error fetching drones:", error);
     }
@@ -102,92 +107,96 @@ function DronesList() {
   
 
 
-return (
-  <div className="droneList-header">
-    <h2 className="droneList-title">Drones Selection</h2>
-    <p>Feel the World, Ride the Wind</p>
-    <button
-      className="add-drone-button"
-      onClick={handleCreateDroneButtonClick}
-    >
-      + Add new Drone
-    </button>
-    {showCreateDroneForm && <CreateDrone />}
-    <div className="drones-list">
-      {drones.map((drone) => (
-        <React.Fragment key={`drone-fragment-${drone._id}`}>
-          <div className="drone-item">
-            <h1>{drone.model}</h1>
-
-            <img
-              src={drone.imageUrl}
-              alt={drone.model}
-              className="drone-image"
-            />
-            <div className="drone-buttons">
-              <button
-                className="drone-button"
-                onClick={() => handleReviewButtonClick(drone._id)}
-              >
-                Review this Drone
-              </button>
-              <button
-                className="drone-button"
-                onClick={() => handleViewReviewsClick(drone._id)}
-              >
-                View Reviews
-              </button>
-            </div>
+  return (
+    <div className="droneList-header">
+      <h2 className="droneList-title">Drones Selection</h2>
+      <p>Feel the World, Ride the Wind</p>
+      <button
+        className="add-drone-button"
+        onClick={handleCreateDroneButtonClick}
+      >
+        + Add new Drone
+      </button>
+      {showCreateDroneForm && <CreateDrone />}
+      <div className="drones-list">
+        {loading ? (
+          <div className="loading-container">
+            <CircleLoader color="#2995ec" size={65} speedMultiplier={58} />
           </div>
-          {showReviewForm && selectedDrone === drone._id && (
-            <CreateReview
-              className={`create-review-form${formSubmitted ? " create-review-form-submitted" : ""}`}
-              droneId={drone._id}
-              userId={userId}
-              onSave={handleReviewSave}
-              onFormSubmitted={handleFormSubmitted}
-            />
-          )}
-          {showReviewsList && selectedDrone === drone._id && (
-            <div
-              className="reviews-overlay"
-              onClick={() => handleToggleReviewsList(false)}
-            >
-              <div
-                className={`reviews-container${
-                  showReviewsList && selectedDrone === drone._id
-                    ? " visible"
-                    : ""
-                }`}
-              >
-                <button
-                  className="close-reviews"
+        ) : (
+          drones.map((drone) => (
+            <React.Fragment key={`drone-fragment-${drone._id}`}>
+              <div className="drone-item">
+                <h1>{drone.model}</h1>
+                <img
+                  src={drone.imageUrl}
+                  alt={drone.model}
+                  className="drone-image"
+                />
+                <div className="drone-buttons">
+                  <button
+                    className="drone-button"
+                    onClick={() => handleReviewButtonClick(drone._id)}
+                  >
+                    Review this Drone
+                  </button>
+                  <button
+                    className="drone-button"
+                    onClick={() => handleViewReviewsClick(drone._id)}
+                  >
+                    View Reviews
+                  </button>
+                </div>
+              </div>
+              {showReviewForm && selectedDrone === drone._id && (
+                <CreateReview
+                  className={`create-review-form${formSubmitted ? " create-review-form-submitted" : ""}`}
+                  droneId={drone._id}
+                  userId={userId}
+                  onSave={handleReviewSave}
+                  onFormSubmitted={handleFormSubmitted}
+                />
+              )}
+              {showReviewsList && selectedDrone === drone._id && (
+                <div
+                  className="reviews-overlay"
                   onClick={() => handleToggleReviewsList(false)}
                 >
-                  ×
-                </button>
-                <ul className="reviews-list">
-                  {reviews.map((review) => (
-                    <li key={review._id} className="review-item">
-                      <p className="review-username">
-                        {review.user.username}
-                      </p>
-                      <h2 className="review-name"> {review.name}</h2>
-                      <p className="review-comment">{review.comment}</p>
-                      
-                      <Rating className="review-rating" reviews={review} /> 
-                      
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          )}
-        </React.Fragment>
-      ))}
+                  <div
+                    className={`reviews-container${
+                      showReviewsList && selectedDrone === drone._id
+                        ? " visible"
+                        : ""
+                    }`}
+                  >
+                    <button
+                      className="close-reviews"
+                      onClick={() => handleToggleReviewsList(false)}
+                    >
+                      ×
+                    </button>
+                    <ul className="reviews-list">
+                      {reviews.map((review) => (
+                        <li key={review._id} className="review-item">
+                          <p className="review-username">
+                            {review.user.username}
+                          </p>
+                          <h2 className="review-name"> {review.name}</h2>
+                          <p className="review-comment">{review.comment}</p>
+                          <Rating className="review-rating" reviews={review} />
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              )}
+            </React.Fragment>
+          ))
+        )}
+      </div>
     </div>
-  </div>
-);
+  );
+  
 
 }
 

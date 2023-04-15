@@ -25,4 +25,12 @@
     position: absolute;
     z-index: 1000;
   }
+
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px); /* Adjust the value 100px according to the height of your header/footer */
+  }
+  
   
