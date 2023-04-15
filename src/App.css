@@ -644,10 +644,11 @@
 }
 
 .create-drone-submit:hover {
-  
+  padding: 8px 10px ;
   font-size: 14.5px;
   color: #2d2d2d;
-  background-image: radial-gradient(circle, limegreen, darkorchid);
+  font-size: 1rem;
+  background-image: radial-gradient(circle, rgb(95, 215, 255), darkorchid);
 }
 
 /* Add the slide-up keyframe animation */

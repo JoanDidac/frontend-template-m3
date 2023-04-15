@@ -14,6 +14,7 @@ export default function LandingPage() {
         // display hardcoded drone as the landing page drone, in the future will display the drone with more likes.
         const droneWithVideo = { ...response[0], videoUrl: 'https://res.cloudinary.com/ddcimekqb/video/upload/v1681432329/colorful-trees-fall_kbgrzl.mp4' };
         setDrone(droneWithVideo);
+      
       } catch (error) {
         console.error(error);
       }
@@ -28,9 +29,12 @@ export default function LandingPage() {
     }
   };
 
+  
+
   return (
     drone && (
       <div className="landing-page">
+      
         <video
           src={drone.videoUrl}
           autoPlay
