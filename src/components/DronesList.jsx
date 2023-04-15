@@ -65,7 +65,7 @@ function DronesList() {
     setSelectedDrone(droneId);
     setShowReviewForm(false); // Hide the review form when displaying the reviews
     const reviewsData = await reviewsService.getReviewsByDroneId(droneId);
-    console.log("Fetched reviews:", reviewsData); // Add this line
+    console.log("Fetched reviews:", reviewsData); 
     setReviews(reviewsData);
     setShowReviewsList(true);
   };

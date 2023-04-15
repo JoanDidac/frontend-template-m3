@@ -36,8 +36,8 @@ function PostsList() {
 
   return (
     <div className='postsList-container'>
-      <h2>All Posts</h2>
-      <button onClick={handleCreatePostButtonClick}>Create new Post</button>
+      <h2>All Posts Collection</h2>
+      <button className='add-drone-button' onClick={handleCreatePostButtonClick}>Create new Post</button>
       {showCreatePostForm && <CreatePost />}
       <div className='postsList-card'>
         {posts.map((post) => (
