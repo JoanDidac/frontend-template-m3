@@ -9,22 +9,26 @@ const Footer = () => {
     <footer>
       <div className="footer-grid">
         <div className="column">
+          <h4>Sky Pulse</h4>
           <a href="/about">About</a>
           <a href="/contact">Contact</a>
           <a href="/support">Support</a>
         </div>
         <div className="column">
+          <h4>Discover</h4>
           <a href="/interests">Interests</a>
           <a href="/enterprise">Enterprise</a>
           <a href="/community">Community</a>
         </div>
         <div className="column">
+          <h4>Discover</h4>
           <a href="/safeflying">Safe Flying</a>
-          <a href="/developer">Developer</a>
+          <a href="/law">Drone Law</a>
           <a href="/cookies">Use of Cookies</a>
         </div>
         <div className="column">
-          <a href="/law">Law</a>
+          <h4>Professionals</h4>
+          <a href="/developer">Developer</a>
           <a href="/maps">Maps</a>
           <a href="/explore">Explore</a>
         </div>
