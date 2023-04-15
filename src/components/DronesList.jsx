@@ -175,7 +175,7 @@ return (
                       <h2 className="review-name"> {review.name}</h2>
                       <p className="review-comment">{review.comment}</p>
                       
-                      <Rating className="review-rating" reviews={drone.reviews} /> 
+                      <Rating className="review-rating" reviews={review} /> 
                       
                     </li>
                   ))}

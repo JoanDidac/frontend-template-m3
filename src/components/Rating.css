@@ -3,9 +3,19 @@
   }
   
   .drone-rating-icon {
-    /* Adjust the width, height, and margin as needed */
+    
     width: 20px;
     height: 20px;
     margin-right: 4px;
+  }
+  
+  .drone-rating-icon.active {
+    width: 24px; 
+    height: 24px;
+    
+  }
+  
+  .drone-rating-icon.light {
+    fill: #cccccc; 
   }
   

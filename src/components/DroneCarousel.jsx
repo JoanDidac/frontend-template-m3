@@ -4,7 +4,9 @@ import './DroneCarousel.css';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import droneService from '../services/droneService';
+import reviewsService from '../services/reviewsService';
 import Rating from './Rating';
+import Ratings from './Ratings';
 
 
   export const responsive = {
@@ -30,13 +32,17 @@ import Rating from './Rating';
 
   export default function DroneCarousel() {
   const [drones, setDrones] = useState([]);
-
+  const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
     const fetchDrones = async () => {
       try {
-        const response = await droneService.getDrones(); // Replace with the correct method to fetch all drones
+        const response = await droneService.getDrones();
+        const reviewResponse = await reviewsService.getReviews(); // Replace with the correct method to fetch all drones
         setDrones(response);
+        console.log('Drones in carousel', response)
+        console.log('reviews in carousel', reviewResponse)
+        setReviews(reviewResponse);
       } catch (error) {
         console.error(error);
       }
@@ -54,7 +60,7 @@ import Rating from './Rating';
         <div key={index} className="carousel-item">
             <img className='drone-img-carousel' src={drone.imageUrl} alt={drone.model} />
              <h2>{drone.model}</h2>
-             <Rating className="review-rating" reviews={drone.reviews} /> 
+             <Ratings className="review-rating" reviews={reviews.filter(review => review.drone === drone._id)} /> 
 
              <button> Check this Drone </button>
         </div>
