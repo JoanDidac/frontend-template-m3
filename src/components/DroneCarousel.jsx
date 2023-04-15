@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../App.css'
 import './DroneCarousel.css';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import droneService from '../services/droneService';
 import reviewsService from '../services/reviewsService';
-import Rating from './Rating';
 import Ratings from './Ratings';
+import handleSeeMore from './LandingPage';
 
 
   export const responsive = {
@@ -33,6 +34,11 @@ import Ratings from './Ratings';
   export default function DroneCarousel() {
   const [drones, setDrones] = useState([]);
   const [reviews, setReviews] = useState([]);
+  const navigate = useNavigate();
+
+  const handleSeeMore = (droneId) => {
+    navigate(`/drones/${droneId}`);
+  };
 
   useEffect(() => {
     const fetchDrones = async () => {
@@ -62,7 +68,8 @@ import Ratings from './Ratings';
              <h2>{drone.model}</h2>
              <Ratings className="review-rating" reviews={reviews.filter(review => review.drone === drone._id)} /> 
 
-             <button> Check this Drone </button>
+             <button onClick={() => handleSeeMore(drone._id)}> Check this Drone </button>
+
         </div>
       ))}
       </Carousel>

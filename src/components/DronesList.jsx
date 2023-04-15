@@ -15,7 +15,7 @@ function DronesList() {
   const [selectedDrone, setSelectedDrone] = useState(null);
   const [reviews, setReviews] = useState([]);
   const [showReviewsList, setShowReviewsList] = useState(false);
-  const [userReviews, setUserReviews] = useState([]);
+  const [ setUserReviews] = useState([]);
   const [showMyReviews, setShowMyReviews] = useState(false);
   const { isLoggedIn } = useAuth();
   const [formSubmitted, setFormSubmitted] = useState(false);

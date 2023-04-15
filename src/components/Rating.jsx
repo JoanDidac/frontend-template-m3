@@ -23,7 +23,7 @@ const Rating = ({ reviews }) => {
         }
     }
     setDroneIcons(updatedIcons);
-    },[])
+    },[reviews.rating])
 
 
   return <div className="drone-rating"> {droneIcons}</div>;

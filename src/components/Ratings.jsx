@@ -19,7 +19,7 @@ const Ratings = ({ reviews }) => {
   useEffect(() => {
     const avgReviews = calculateAverageRating(reviews);
     setAvg(avgReviews);
-  }, [])
+  }, [reviews])
 
   useEffect(() => {
     let updatedIcons = [];
