@@ -1,0 +1,11 @@
+.drone-rating {
+    display: flex;
+  }
+  
+  .drone-rating-icon {
+    /* Adjust the width, height, and margin as needed */
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+  }
+  

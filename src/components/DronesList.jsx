@@ -5,6 +5,7 @@ import CreateDrone from "./CreateDrone";
 import CreateReview from "./CreateReview";
 import reviewsService from "../services/reviewsService";
 import { useAuth } from "../hooks/useAuth";
+import Rating from "./Rating";
 
 function DronesList() {
   const [drones, setDrones] = useState([]);
@@ -18,6 +19,7 @@ function DronesList() {
   const [showMyReviews, setShowMyReviews] = useState(false);
   const { isLoggedIn } = useAuth();
   const [formSubmitted, setFormSubmitted] = useState(false);
+
 
  
 
@@ -172,9 +174,9 @@ return (
                       </p>
                       <h2 className="review-name"> {review.name}</h2>
                       <p className="review-comment">{review.comment}</p>
-                      <h3 className="review-rating">
-                        Rating: {review.rating}{" "}
-                      </h3>
+                      
+                      <Rating className="review-rating" reviews={drone.reviews} /> 
+                      
                     </li>
                   ))}
                 </ul>

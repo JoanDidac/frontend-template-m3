@@ -4,6 +4,7 @@ import './DroneCarousel.css';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import droneService from '../services/droneService';
+import Rating from './Rating';
 
 
   export const responsive = {
@@ -53,8 +54,9 @@ import droneService from '../services/droneService';
         <div key={index} className="carousel-item">
             <img className='drone-img-carousel' src={drone.imageUrl} alt={drone.model} />
              <h2>{drone.model}</h2>
-             <p>rating : {drone.rating} </p>
-             <button> Check this Drone</button>
+             <Rating className="review-rating" reviews={reviews} /> 
+
+             <button> Check this Drone </button>
         </div>
       ))}
       </Carousel>
