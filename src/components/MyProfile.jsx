@@ -73,18 +73,14 @@ function MyProfile() {
 
   return (
     <div className="my-profile">
-      <h2>My Profile</h2>
+      <h2 >My Profile</h2>
       <div className="glowing-btn-container">
         <div className="glowing-btn glowing-btn-posts glowing-btn-my-posts" onClick={handleMyPostsClick}>
           <span className="glowing-txt">My Posts ⌽</span>
         </div>
-      </div>
-      <div className="glowing-btn-container">
         <div className="glowing-btn glowing-btn-reviews glowing-btn-my-reviews" onClick={handleMyReviewsClick}>
           <span className="glowing-txt">My Reviews ⌘</span>
         </div>
-      </div>
-      <div className="glowing-btn-container">
         <div className="glowing-btn glowing-btn-edit-profile" onClick={handleEditProfileClick}>
           <span className="glowing-txt">Edit My Profile ⍜</span>
         </div>
