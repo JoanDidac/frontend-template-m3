@@ -14,7 +14,7 @@ footer {
     justify-content: space-between;
     margin-bottom: 20px;
     margin-top: 10px;
-    margin-left: 150px;
+    margin-left: 195px;
     line-height: 35px;
   }
   
@@ -49,16 +49,17 @@ footer {
   }
   
   .footer-logo {
-    width: 150px;
+    width: 350px;
     height: auto;
-    margin-left: 45%;
-    margin-right: 20%;
+    margin-left: auto;
+    margin-right: auto;
     filter: grayscale(100%); 
   }
   .footer-logo:hover {
-    filter: grayscale(0) brightness(1.2); 
-    width: 200px;
-    margin-left: 44%;
+    filter: grayscale(0); 
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
    
   }
   
@@ -67,6 +68,7 @@ footer {
     height: 30px; 
     object-fit:cover; 
     margin-left: 10px;
+    margin-bottom: -25px;
     filter: grayscale(100%); 
   }
   
@@ -81,7 +83,12 @@ footer {
   }
   
   .copyright {
+    margin-top: -10px;
+    margin-bottom: -10px;
     text-align: center;
     font-size: 12px;
+  }
+  .copyright strong {
+    color: rgb(61, 39, 77);
   }
   

@@ -3,6 +3,11 @@ import logo from '../assets/icon-dark2.png';
 import instagramIcon from '../assets/logo-instagram.png';
 import youtubeIcon from '../assets/logo-youtube.png';
 import facebookIcon from '../assets/logo-facebook.png';
+import twitterIcon from '../assets/icon-twitter.png'
+import twitchIcon from '../assets/icon-twitch2.png';
+import linkdinIcon from '../assets/icon-linkdin.png'
+import logoFooter from '../assets/logo-skypulse-footer.png';
+import handleLogoClick from './Navbar';
 
 const Footer = () => {
   return (
@@ -24,7 +29,7 @@ const Footer = () => {
           <h4>Discover</h4>
           <a href="/safeflying">Safe Flying</a>
           <a href="/law">Drone Law</a>
-          <a href="/cookies">Use of Cookies</a>
+          <a href="/cookies">Cookies</a>
         </div>
         <div className="column">
           <h4>Professionals</h4>
@@ -33,8 +38,20 @@ const Footer = () => {
           <a href="/explore">Explore</a>
         </div>
       </div>
+      
       <div className="footer-logos">
-        <img src={logo} alt="Logo" className="footer-logo" />
+      <div className="social-icons">
+          <a href="https://www.linkdin.com" target="_blank" rel="noopener noreferrer">
+            <img src={linkdinIcon} alt="Linkdin" />
+          </a>
+          <a href="https://www.twitch.com" target="_blank" rel="noopener noreferrer">
+            <img src={twitchIcon} alt="Twitch" />
+          </a>
+          <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+            <img src={twitterIcon} alt="Twitter" />
+          </a>
+        </div>
+        <img src={logoFooter} onClick={handleLogoClick}  alt="Logo" className="footer-logo" />
         <div className="social-icons">
           <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
             <img src={instagramIcon} alt="Instagram" />
@@ -49,7 +66,7 @@ const Footer = () => {
       </div>
       <hr className="divider" />
       <div className="copyright">
-        <p>&copy; {new Date().getFullYear()} U&D™ | All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} U&D™ | All rights reserved. </p>
       </div>
     </footer>
   );
