@@ -39,7 +39,7 @@ export default function LandingPage() {
           className="landing-video"
         />
         <div className="overlay">
-        <h3>Footage recorded with: </h3>
+        <h3>Footage of the Month recorded with Drone: </h3>
           <h2 className="drone-model">{drone.model}</h2>
           <button onClick={handleSeeMore} className="see-more-btn">
             Check this Drone
