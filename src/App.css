@@ -191,6 +191,9 @@
   min-height: 100%;
   object-fit: cover;
 }
+.video-container {
+  position: relative;
+}
 
 .overlay {
   position: absolute;

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import droneService from '../services/droneService';
-import Loading from './Loading'; // Import the Loading component
+import { CircleLoader } from "react-spinners"; // Import the Loading component
+import './Loading.css';
 
 export default function LandingPage() {
   const [drone, setDrone] = useState(null);
@@ -34,17 +35,23 @@ export default function LandingPage() {
 
   return (
     <div className="landing-page">
-      {loading && <Loading loading={loading} color="#123abc" size={100} />} {/* Render the Loading component when loading */}
       {drone && (
         <>
-          <video
-            src={drone.videoUrl}
-            autoPlay
-            muted
-            loop
-            className="landing-video"
-            onLoadedData={handleVideoLoad} // Add an event handler for when the video is loaded
-          />
+          <div className="spinner-container">
+            {loading && (
+              
+          <CircleLoader color="#2995ec" size={75} speedMultiplier={58} />
+       
+            )}
+            <video
+              src={drone.videoUrl}
+              autoPlay
+              muted
+              loop
+              className="landing-video"
+              onLoadedData={handleVideoLoad}
+            />
+          </div>
           <div className="overlay">
             <h3>Footage of the Month recorded with Drone: </h3>
             <h2 className="drone-model">{drone.model}</h2>
@@ -56,4 +63,5 @@ export default function LandingPage() {
       )}
     </div>
   );
+  
 }

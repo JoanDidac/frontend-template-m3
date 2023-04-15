@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import postService from '../services/postService';
-import CreatePost from './CreatePost';
-import PostPreview from './PostPreview';
+import React, { useEffect, useState } from "react";
+import postService from "../services/postService";
+import CreatePost from "./CreatePost";
+import PostPreview from "./PostPreview";
+import { CircleLoader } from "react-spinners";
 
 function PostsList() {
   const [posts, setPosts] = useState([]);
   const [showCreatePostForm, setShowCreatePostForm] = useState(false);
-  // const [showPostPreview, setShowPostPreview] = useState(false); 
+  const [loading, setLoading] = useState(true);
+  // const [showPostPreview, setShowPostPreview] = useState(false);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -19,8 +21,9 @@ function PostsList() {
           };
         });
         setPosts(postsWithMediaAsArray);
+        setLoading(false);
       } catch (error) {
-        console.error('Error fetching posts:', error);
+        console.error("Error fetching posts:", error);
       }
     };
 
@@ -35,18 +38,26 @@ function PostsList() {
   // };
 
   return (
-    <div className='postsList-container'>
+    <div className="postsList-container">
       <h2>All Posts Collection</h2>
-      <button className='add-drone-button' onClick={handleCreatePostButtonClick}>Create new Post</button>
+      <button
+        className="add-drone-button"
+        onClick={handleCreatePostButtonClick}
+      >
+        Create new Post
+      </button>
       {showCreatePostForm && <CreatePost />}
-      <div className='postsList-card'>
-        {posts.map((post) => (
-          <PostPreview
-            key={post._id}
-            post={post}
-          />
-        ))}
-      </div>
+      {loading ? ( // Render the ClimbingBoxLoader when loading
+        <div className="spinner-container">
+          <CircleLoader color="#2995ec" size={75} speedMultiplier={58} />
+        </div>
+      ) : (
+        <div className="postsList-card">
+          {posts.map((post) => (
+            <PostPreview key={post._id} post={post} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
