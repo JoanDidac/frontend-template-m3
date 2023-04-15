@@ -1,4 +1,5 @@
 import './App.css';
+import '../src/components/Footer.css'
 import { Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import Home from './views/Home';
@@ -16,7 +17,7 @@ import PostDetails from './components/PostDetails';
 import DroneDetails from './components/DronesDetails';
 import MyProfile from './components/MyProfile';
 import EditReview from './components/EditReview';
-
+import Footer from './components/Footer';
 
 
 function App() {
@@ -43,7 +44,9 @@ function App() {
         <Route path="/" element={<PostsList />} />
         <Route path="/posts/:id" element={<PostDetails />} />
       </Routes>
+      <Footer></Footer>
     </div>
+    
   );
 }
 

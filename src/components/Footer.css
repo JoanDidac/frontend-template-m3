@@ -1,0 +1,76 @@
+/* Footer.css */
+
+footer {
+    background-color: #2d2d2d;
+    color: #c0bebe;
+    padding: 20px 40px;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 60px;
+  }
+  
+  .footer-grid {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .column a {
+    text-decoration: none;
+    color: #ecececd1;
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .column a:hover {
+    color: #fff;
+  }
+  
+  .footer-logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer-logo {
+    width: 150px;
+    height: auto;
+    margin-left: 45%;
+    margin-right: 20%;
+    filter: grayscale(100%); 
+  }
+  .footer-logo:hover {
+    filter: grayscale(0) brightness(1.2); 
+    width: 200px;
+    margin-left: 44%;
+   
+  }
+  
+  .social-icons img {
+    width: 30px;
+    height: 30px; 
+    object-fit:cover; 
+    margin-left: 10px;
+    filter: grayscale(100%); 
+  }
+  
+  .social-icons a:hover img {
+    filter: grayscale(0) brightness(1.2); /* Remove the gray filter and increase brightness on hover */
+  }
+  
+  .divider {
+    border: 0;
+    border-top: 1px solid #444;
+    margin: 30px 0;
+  }
+  
+  .copyright {
+    text-align: center;
+    font-size: 12px;
+  }
+  
