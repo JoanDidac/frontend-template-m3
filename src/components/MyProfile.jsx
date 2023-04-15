@@ -127,6 +127,13 @@ function MyProfile() {
                     <button onClick={() => handleEditPostClick(post._id)}>
                       Edit Post
                     </button>
+                    <div>
+              
+              <button onClick={handleCreatePostButtonClick}>
+                Create new Post
+              </button>
+              {showCreatePostForm && <CreatePost />}
+            </div>
                     <Link to={`/posts/${post._id}`}>Check the Post</Link>
                     {editingPostId === post._id && (
                       <EditPostData postId={post._id} />
