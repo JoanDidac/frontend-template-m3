@@ -163,9 +163,4 @@ function MyProfile() {
     </div>
   );
 }  
-      
-
-
-
-
 export default MyProfile;

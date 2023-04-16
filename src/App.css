@@ -1041,7 +1041,15 @@ body {
   margin-left: 0px;
   
 }
-
+.glowing-btn:nth-child(2) {
+margin-left: 10px;
+margin-right: -65px;
+  
+}
+.glowing-btn:nth-child(3) {
+  margin-left: 60px;
+  margin-right: -31px;
+}
 
 .glowing-btn {
 
@@ -1059,7 +1067,7 @@ body {
   font-weight: 900;
   letter-spacing: 0.5em;
 
-  margin: 0 5px;
+  margin: 0 15px;
 
   -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
     0px 0px 0.5em 0px var(--glow-color);
