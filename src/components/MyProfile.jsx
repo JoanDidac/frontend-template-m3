@@ -113,10 +113,12 @@ function MyProfile() {
               {userReviews.map((review) => (
                 <div key={review._id} className="review-item">
                   <img src={review.drone.imageUrl} alt="reviewPicture" />
-                  <p>{review.name}</p>
+                  <div className="review-item-content">
+                  <h3>{review.name}</h3>
                   <p>{review.comment}</p>
-                  <p>{review.rating}/5</p>
+                  <h4>Rating:{review.rating}/5</h4>
                   <Link to={`/reviews/edit/${review._id}`}>Edit Review</Link>
+                </div>
                 </div>
               ))}
             </div>
