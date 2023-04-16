@@ -18,6 +18,9 @@ function MyProfile() {
   const [userPosts, setUserPosts] = useState([]);
   const [editingPostId, setEditingPostId] = useState(null);
   const [submittingForm, setSubmittingForm] = useState(false);
+  const [isMyPostsActive, setIsMyPostsActive] = useState(false);
+  const [isMyReviewsActive, setIsMyReviewsActive] = useState(false);
+  const [isEditProfileActive, setIsEditProfileActive] = useState(false);
 
   const [showCreatePostForm, setShowCreatePostForm] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -52,12 +55,23 @@ function MyProfile() {
   const handleEditProfileClick = () => {
     setShowEditProfile(!showEditProfile);
     setEditingPostId(true);
+    setIsEditProfileActive(true);
+    setIsMyPostsActive(false);
+    setIsMyReviewsActive(false);
+    const button = document.querySelector("button");
+    button.classList.toggle("button-active");
   };
+  
+  const button = document.querySelector("button");
+  button.addEventListener("click", handleEditProfileClick);
 
   const handleMyReviewsClick = async () => {
     if (isLoggedIn) {
       const reviews = await reviewsService.getReviewsByUser(user._id);
       setUserReviews(reviews);
+      setIsMyReviewsActive(true);
+    setIsMyPostsActive(false);
+    setIsEditProfileActive(false);
     }
     setShowMyReviews(!showMyReviews);
   };
@@ -68,6 +82,9 @@ function MyProfile() {
       setUserPosts(posts);
     }
     setShowMyPosts(!showMyPosts);
+    setIsMyPostsActive(true);
+    setIsMyReviewsActive(false);
+    setIsEditProfileActive(false);
   };
 
   const handleEditPostClick = (postId) => {

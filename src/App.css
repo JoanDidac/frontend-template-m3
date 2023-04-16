@@ -1228,6 +1228,7 @@ margin-right: -65px;
   font-size: 1em;
   font-weight: 900;
   letter-spacing: 0.5em;
+  transition: height 0.2s ease-in-out;
 
   margin: 0 15px;
 
@@ -1239,6 +1240,13 @@ margin-right: -65px;
     0px 0px 0.5em 0px var(--glow-color);
   animation: border-flicker 4s linear forwards;
 }
+/* If the buttons are active */
+.glowing-btn-posts:active,
+.glowing-btn-reviews:active,
+.glowing-btn-edit-profile:active {
+  height: 5vh !important;
+}
+
 
 .glowing-txt {
   margin-top: 1px;
@@ -1430,4 +1438,11 @@ margin-right: -65px;
   align-items: center;
   width: calc(100% / 3);
 }
+/* <<<--- If glowing buttons are active --->>> */
+
+.active {
+  height: 4.5vh;
+  transition: height 0.2s ease-in-out;
+}
+
 
