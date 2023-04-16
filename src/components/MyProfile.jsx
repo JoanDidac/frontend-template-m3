@@ -109,7 +109,7 @@ function MyProfile() {
           {userReviews.length === 0 ? (
             <p>No reviews found.</p>
           ) : (
-            <div>
+            <div className="review-item-container">
               {userReviews.map((review) => (
                 <div key={review._id} className="review-item">
                   <img src={review.drone.imageUrl} alt="reviewPicture" />
