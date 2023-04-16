@@ -1054,6 +1054,7 @@ margin-right: -65px;
 .glowing-btn {
 
   max-width: 450px;
+  height: 4vh;
   position: relative;
   color: var(--glow-color);
   cursor: pointer;
@@ -1079,6 +1080,7 @@ margin-right: -65px;
 }
 
 .glowing-txt {
+  margin-top: 4px;
   float: left;
   margin-right: -0.8em;
   -webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
@@ -1087,6 +1089,7 @@ margin-right: -65px;
     0 0 0.45em var(--glow-color);
   text-shadow: 0 0 0.125em 4s linear infinite;
 }
+
 
 .faulty-letter {
   opacity: 0.5;
