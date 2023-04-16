@@ -44,16 +44,17 @@ const EditUserData = () => {
   }
 
   return (
-    <div>
-      <h1>My Profile</h1>
-      <p>Name: {userData.username}</p>
-      <p>Email: {userData.email}</p>
-  
-      <h2>Update Profile</h2>
-      <form onSubmit={handleUpdateProfile}>
-        <label>
+    <div className="profile">
+      <h1 className="profile__title">My Profile</h1>
+      <p className="profile__info">Name: {userData.username}</p>
+      <p className="profile__info">Email: {userData.email}</p>
+      
+      <h2 className="profile__subtitle">Update Profile</h2>
+      <form className="profile__form" onSubmit={handleUpdateProfile}>
+        <label className="profile__label">
           Name:
           <input
+            className="profile__input"
             type="text"
             name="username"
             defaultValue={userData.username}
@@ -61,9 +62,10 @@ const EditUserData = () => {
           />
         </label>
         <br />
-        <label>
+        <label className="profile__label">
           Email:
           <input
+            className="profile__input"
             type="email"
             name="email"
             defaultValue={userData.email}
@@ -71,9 +73,10 @@ const EditUserData = () => {
           />
         </label>
         <br />
-        <label>
+        <label className="profile__label">
           Password (leave blank to keep the same):
           <input
+            className="profile__input"
             type="password"
             name="password"
             placeholder="New password"
@@ -81,10 +84,11 @@ const EditUserData = () => {
           />
         </label>
         <br />
-        <button type="submit">Update Profile</button>
+        <button className="profile__button" type="submit">Update Profile</button>
       </form>
     </div>
   );
+  
 }
 
 export default EditUserData;
