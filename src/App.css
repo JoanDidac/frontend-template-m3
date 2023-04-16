@@ -403,7 +403,7 @@
   box-shadow: 0 0 5px rgba(98, 255, 216, 0.5);
 }
 .review-item:hover {
-  transform: translateY(-10px);
+  transform: translateY(-5px);
   box-shadow:
   0 5px 0 rgba(212, 212, 212, 0.2),
   0 5px 0 rgba(179, 179, 179, 0.1),
@@ -459,12 +459,12 @@
   font-weight: 600;
 }
 .review-item-container .review-item:hover {
-  transform: translateY(-10px);
+  transform: translateY(-7px) translateX(-10px);
   box-shadow:
-  5px 5px 1px rgba(212, 212, 212, 0.2),
-  5px 5px 2px rgba(179, 179, 179, 0.1),
-  3px 5px 2px rgba(126, 126, 126, 0.2),
-  3px 5px 20px rgba(48, 48, 48, 0.503);
+  10px 7px 2px rgba(255, 255, 255, 0.1),
+  10px 7px 2px rgba(179, 179, 179, 0.1),
+  10px 7px 10px rgba(43, 43, 43, 0.1),
+  10px 7px 20px rgba(0, 0, 0, 0.1);
 
 }
 
