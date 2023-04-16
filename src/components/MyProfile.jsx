@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import EditPostData from "./EditPostData";
 import { CircleLoader } from "react-spinners";
 import { BounceLoader } from "react-spinners";
+import Ratings from './Ratings';
 
 function MyProfile() {
   const [showEditProfile, setShowEditProfile] = useState(false);
@@ -133,7 +134,10 @@ function MyProfile() {
                   <div className="review-item-content">
                   <h3>{review.name}</h3>
                   <p>{review.comment}</p>
-                  <h4>Rating:{review.rating}/5</h4>
+                  <h4>My Rating:</h4>
+                  <div className="review-rating">
+                  <Ratings reviews={userReviews.filter(review => review.rating)} />
+                  </div>
                   <Link to={`/reviews/edit/${review._id}`}>Edit Review</Link>
                 </div>
                 </div>
