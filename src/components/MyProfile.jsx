@@ -79,6 +79,7 @@ function MyProfile() {
     <div className="my-profile">
       <h2>My Profile</h2>
       <div className="glowing-btn-container">
+      <div className="glowing-btn-wrapper">
         <div
           className="glowing-btn glowing-btn-posts glowing-btn-my-posts"
           onClick={handleMyPostsClick}
@@ -95,7 +96,8 @@ function MyProfile() {
           className="glowing-btn glowing-btn-edit-profile"
           onClick={handleEditProfileClick}
         >
-          <span className="glowing-txt">Edit My Profile ⍜</span>
+          <span className="glowing-txt">Edit My Profile⍜</span>
+        </div>
         </div>
       </div>
       {showEditProfile && <EditUserData />}
