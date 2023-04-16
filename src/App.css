@@ -956,9 +956,97 @@ body {
   gap: 20px;
   margin: 20px;
 }
+/* <<<--- Edit Post Form in My Profile --->>> */
+
+.edit-post-form h2,
+.edit-post-form-in-my-profile h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  height: 100px;
+  
+  
+}
+
+.edit-post-form,
+.edit-post-form-in-my-profile {
+  background-color: #222;
+  width: 75%;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.edit-post-form input,
+.edit-post-form textarea,
+.edit-post-form-in-my-profile input,
+.edit-post-form-in-my-profile textarea {
+  background-color: #333;
+  border: 1px solid #444;
+  color: #fff;
+  border-radius: 4px;
+  padding: 8px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.edit-post-form textarea,
+.edit-post-form-in-my-profile textarea {
+  height: 100px;
+}
+
+.edit-post-form button,
+.edit-post-form-in-my-profile button {
+  background-color: #e94ef1;
+  width: 85%;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-left: calc(7%);
+  margin-right: calc(5%);
+  
+}
+.edit-post-form-container {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background */
+}
 
 
+.edit-post-form button:hover,
+.edit-post-form-in-my-profile button:hover {
+  background-color: #1a70b8;
+}
 
+.edit-post-form label,
+.edit-post-form-in-my-profile label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.edit-post-form .loading-edit-post-form,
+.edit-post-form-in-my-profile .loading-edit-post-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+
+/* ^^^ Edit post form in my profile ^^^ */
 
 .post-info {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -1080,7 +1168,7 @@ margin-right: -65px;
 }
 
 .glowing-txt {
-  margin-top: 4px;
+  margin-top: 1px;
   float: left;
   margin-right: -0.8em;
   -webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),

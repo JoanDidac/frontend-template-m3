@@ -7,6 +7,7 @@ import CreatePost from "./CreatePost";
 import { Link } from "react-router-dom";
 import EditPostData from "./EditPostData";
 import { CircleLoader } from "react-spinners";
+import { BounceLoader } from "react-spinners";
 
 function MyProfile() {
   const [showEditProfile, setShowEditProfile] = useState(false);
@@ -16,6 +17,8 @@ function MyProfile() {
   const [userReviews, setUserReviews] = useState([]);
   const [userPosts, setUserPosts] = useState([]);
   const [editingPostId, setEditingPostId] = useState(null);
+  const [submittingForm, setSubmittingForm] = useState(false);
+
   const [showCreatePostForm, setShowCreatePostForm] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -38,9 +41,9 @@ function MyProfile() {
         const posts = await postService.getPostsByUser(user._id);
         console.log("Posts", posts);
         setTimeout(() => {
-            setUserPosts(posts);
-            setLoading(false);
-          }, 2000);
+          setUserPosts(posts);
+          setLoading(false);
+        }, 2000);
       }
     };
     fetchUserPosts();
@@ -48,6 +51,7 @@ function MyProfile() {
 
   const handleEditProfileClick = () => {
     setShowEditProfile(!showEditProfile);
+    setEditingPostId(true);
   };
 
   const handleMyReviewsClick = async () => {
@@ -74,30 +78,29 @@ function MyProfile() {
     setShowCreatePostForm(!showCreatePostForm);
   };
 
-
   return (
     <div className="my-profile">
       <h2>My Profile</h2>
       <div className="glowing-btn-container">
-      <div className="glowing-btn-wrapper">
-        <div
-          className="glowing-btn glowing-btn-posts glowing-btn-my-posts"
-          onClick={handleMyPostsClick}
-        >
-          <span className="glowing-txt">My Posts ⌽</span>
-        </div>
-        <div
-          className="glowing-btn glowing-btn-reviews glowing-btn-my-reviews"
-          onClick={handleMyReviewsClick}
-        >
-          <span className="glowing-txt">My Reviews ⌘</span>
-        </div>
-        <div
-          className="glowing-btn glowing-btn-edit-profile"
-          onClick={handleEditProfileClick}
-        >
-          <span className="glowing-txt">Edit My Profile⍜</span>
-        </div>
+        <div className="glowing-btn-wrapper">
+          <div
+            className="glowing-btn glowing-btn-posts glowing-btn-my-posts"
+            onClick={handleMyPostsClick}
+          >
+            <span className="glowing-txt">My Posts ⌽</span>
+          </div>
+          <div
+            className="glowing-btn glowing-btn-reviews glowing-btn-my-reviews"
+            onClick={handleMyReviewsClick}
+          >
+            <span className="glowing-txt">My Reviews ⌘</span>
+          </div>
+          <div
+            className="glowing-btn glowing-btn-edit-profile"
+            onClick={handleEditProfileClick}
+          >
+            <span className="glowing-txt">Edit My Profile⍜</span>
+          </div>
         </div>
       </div>
       {showEditProfile && <EditUserData />}
@@ -140,18 +143,34 @@ function MyProfile() {
                 <div className="posts-grid">
                   {userPosts.map((post) => (
                     <div key={post._id} className="post-item">
-                      <img src={post.media} alt={post.title} />
-                      <div className="post-info">
-                        <h3>{post.title}</h3>
-                        <p>{post.body}</p>
-                        <button onClick={() => handleEditPostClick(post._id)}>
-                          Edit Post
-                        </button>
-                        <Link to={`/posts/${post._id}`}>Check the Post</Link>
-                        {editingPostId === post._id && (
-                          <EditPostData postId={post._id} />
-                        )}
-                      </div>
+                      {!editingPostId || editingPostId !== post._id ? (
+                        <>
+                          <img src={post.media} alt={post.title} />
+                          <div className="post-info">
+                            <h3>{post.title}</h3>
+                            <p>{post.body}</p>
+                            <button
+                              onClick={() => handleEditPostClick(post._id)}
+                            >
+                              Edit Post
+                            </button>
+                            <Link to={`/posts/${post._id}`}>
+                              Check the Post
+                            </Link>
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          {editingPostId === post._id && submittingForm && (
+                            <div className="loading-edit-post-form">
+                              <BounceLoader color="hsl(300 100% 69%)" speedMultiplier={1.5} />
+                            </div>
+                          )}
+                        </>
+                      )}
+                      {editingPostId === post._id && (
+                        <EditPostData postId={post._id} inMyProfile={true} setSubmittingForm={setSubmittingForm} setEditingPostId={setEditingPostId}  />
+                      )}
                     </div>
                   ))}
                 </div>
@@ -160,7 +179,11 @@ function MyProfile() {
           )}
         </div>
       )}
-    </div>
+      </div>
   );
-}  
+}
+      
+      
+
+  
 export default MyProfile;
