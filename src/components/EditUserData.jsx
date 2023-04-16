@@ -48,11 +48,11 @@ const EditUserData = () => {
       <h1 className="profile__title">My Profile</h1>
       <p className="profile__info">Name: {userData.username}</p>
       <p className="profile__info">Email: {userData.email}</p>
-      
+
       <h2 className="profile__subtitle">Update Profile</h2>
       <form className="profile__form" onSubmit={handleUpdateProfile}>
         <label className="profile__label">
-          Name:
+          Name ⍛
           <input
             className="profile__input"
             type="text"
@@ -63,7 +63,7 @@ const EditUserData = () => {
         </label>
         <br />
         <label className="profile__label">
-          Email:
+          Email •
           <input
             className="profile__input"
             type="email"
@@ -74,7 +74,7 @@ const EditUserData = () => {
         </label>
         <br />
         <label className="profile__label">
-          Password (leave blank to keep the same):
+          Password ◦
           <input
             className="profile__input"
             type="password"

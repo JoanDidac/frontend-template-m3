@@ -1542,10 +1542,11 @@ margin-right: -65px;
 }
 
 .profile__label {
+  color: #c0bebe;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   margin-top: 1em;
   align-items: center;
 }
