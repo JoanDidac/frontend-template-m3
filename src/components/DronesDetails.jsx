@@ -1,18 +1,22 @@
-// components/DroneDetails.jsx
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import droneService from '../services/droneService';
-import './DronesDetails.css';
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import droneService from "../services/droneService";
+import reviewsService from "../services/reviewsService";
+import "./DronesDetails.css";
 
 export default function DroneDetails({ drone: propDrone }) {
   const [drone, setDrone] = useState(propDrone);
   const { id } = useParams();
+  const [reviews, setReviews] = useState([]);
+  const [showReviewsList, setShowReviewsList] = useState(false);
+  console.log("drone:", drone);
 
   useEffect(() => {
     if (!drone) {
       const fetchDrone = async () => {
         try {
           const response = await droneService.getDrone(id);
+          console.log("response:", response);
           setDrone(response);
         } catch (error) {
           console.error(error);
@@ -23,23 +27,60 @@ export default function DroneDetails({ drone: propDrone }) {
     }
   }, [id, drone]);
 
+  const handleViewReviewsClick = async () => {
+    const reviewsData = await reviewsService.getReviewsByDroneId(id);
+    setReviews(reviewsData);
+    setShowReviewsList(true);
+  };
+
+  const handleToggleReviewsList = (show) => {
+    setShowReviewsList(show);
+  };
+
   return (
     drone && (
       <div className="drone-details slide-up-detailed-drone">
-        <h1 className="drone-model detailed-drone-title">{drone.model}</h1>
+        <h2 className="detailed-drone-title">{drone.model}</h2>
         <img className="drone-image" src={drone.imageUrl} alt={drone.model} />
         <div className="drone-specs">
-          <h2>{drone.brand}</h2>
-          <p><strong>Max Flight Time:</strong> {drone.specs?.maxFlightTime || "N/A"} minutes</p>
-          <p><strong> Speed:</strong> {drone.specs?.maxSpeed || "N/A"} km/h</p>
-          <p><strong>Range:</strong> {drone.specs?.range || "N/A"} km</p>
-          <p><strong>Weight:</strong> {drone.specs?.weight || "N/A"} kg</p>
-          <p><strong>Dimensions: </strong>{drone.specs?.dimensions || "N/A"}</p>
+          <p>Max Flight Time: {drone.specs.maxFlightTime} minutes</p>
+          <p>Max Speed: {drone.specs.maxSpeed} km/h</p>
+          <p>Range: {drone.specs.range} km</p>
+          <p>Weight: {drone.specs.weight} g</p>
+          <p>Dimensions: {drone.specs.dimensions}</p>
         </div>
-        <button className="reviews-button drone-detailed-btn">Check all reviews for this Drone</button>
-        {/* add Reviews component here */}
+
+        <button
+          className="reviews-button drone-detailed-btn"
+          onClick={handleViewReviewsClick}
+        >
+          Check all reviews for this Drone
+        </button>
+        {showReviewsList && (
+          <div
+            className="reviews-overlay2"
+            onClick={() => handleToggleReviewsList(false)}
+          >
+            <div className="reviews-container2">
+              <button
+                className="close-reviews2"
+                onClick={() => handleToggleReviewsList(false)}
+              >
+                ×
+              </button>
+              <ul className="reviews-list2">
+                {reviews.map((review) => (
+                  <li key={review._id} className="review-item2">
+                    <p className="review-username2">{review.user.username}</p>
+                    <h2 className="review-name2"> {review.name}</h2>
+                    <p className="review-comment2">{review.comment}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        )}
       </div>
     )
   );
 }
-
