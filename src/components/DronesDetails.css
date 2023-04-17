@@ -130,4 +130,125 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.103);
   animation: gradientAnimation 10s ease infinite;
   }
+
+  /* <<<--- all Reviews from Drone detailed view --->>> */
+  
+  .reviews-overlay2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+  }
+  
+  .reviews-container2 {
+    background-color: #2d2d2d;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 800px;
+    width: 90%;
+    max-height: 60vh; 
+    overflow-y: auto; 
+  }
+  .reviews-container2 h1 {
+      font-family: "Raleway";
+      text-align: center;
+      background-image: linear-gradient(270deg, rgb(217, 216, 216), silver, rgb(56, 56, 56), silver, rgba(169, 169, 169, 1), rgba(211, 211, 211, 1));
+      background-size: 400% 400%;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      font-size: 26px;
+      font-weight: 700;
+      padding: 5px 10px;
+      margin-top: 20px;
+      
+      animation: gradientAnimation 15s ease infinite;
+  }
+  .reviews-container2 strong {
+    font-size: 30px;
+    text-shadow: 0px 0px 2px rgba(218, 165, 32, 0.418);
+  }
+  
+  .close-reviews2 {
+    top: 30px;
+    right: 60px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 24px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  
+  }
+  
+  
+  .reviews-list2 {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .review-item2 {
+    background-color: #6a6969;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+   
+  }
+  
+  .review-username2,
+  .review-name2,
+  .review-comment2 {
+    margin: 0;
+    color: #ffffff;
+  }
+  
+  .review-username2 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .review-name2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color:#beb5b5;
+  }
+  
+  .review-comment2 {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+ 
+  .user-rating-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    align-content: center;
+    
+    
+  }
+  .user-rating-container > * {
+    justify-content: right;
+    
+    width: 430px;
+  }
+
+  
+ 
+  
+  
   

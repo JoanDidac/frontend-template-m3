@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import droneService from "../services/droneService";
 import reviewsService from "../services/reviewsService";
 import "./DronesDetails.css";
+import Ratings from "./Ratings";
 
 export default function DroneDetails({ drone: propDrone }) {
   const [drone, setDrone] = useState(propDrone);
@@ -62,6 +63,7 @@ export default function DroneDetails({ drone: propDrone }) {
             onClick={() => handleToggleReviewsList(false)}
           >
             <div className="reviews-container2">
+            <h1> All Reviews For : <strong>{drone.model}</strong> </h1>
               <button
                 className="close-reviews2"
                 onClick={() => handleToggleReviewsList(false)}
@@ -69,12 +71,18 @@ export default function DroneDetails({ drone: propDrone }) {
                 ×
               </button>
               <ul className="reviews-list2">
+              
                 {reviews.map((review) => (
+                   
                   <li key={review._id} className="review-item2">
+                    <div className="user-rating-container">
+                      <Ratings className={"review-rating2 rating"} rating={review.rating} />
+                    </div>
                     <p className="review-username2">{review.user.username}</p>
                     <h2 className="review-name2"> {review.name}</h2>
                     <p className="review-comment2">{review.comment}</p>
                   </li>
+
                 ))}
               </ul>
             </div>

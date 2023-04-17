@@ -9,7 +9,7 @@ const calculateAverageRating = (reviews) => {
   return Math.round(totalRating / reviews.length);
 };
 
-const Ratings = ({ reviews }) => {
+const Ratings = ({ reviews, rating }) => {
     console.log('Reviews', reviews)
   //const averageRating = calculateAverageRating(reviews);
   const [avg, setAvg] = useState(0);
@@ -17,9 +17,14 @@ const Ratings = ({ reviews }) => {
   const maxRating = 5;
 
   useEffect(() => {
-    const avgReviews = calculateAverageRating(reviews);
-    setAvg(avgReviews);
-  }, [reviews])
+    if (rating) {
+      setAvg(rating);
+    } else {
+      const avgReviews = calculateAverageRating(reviews);
+      setAvg(avgReviews);
+    }
+  }, [reviews, rating]);
+
 
   useEffect(() => {
     let updatedIcons = [];
