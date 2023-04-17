@@ -1,6 +1,57 @@
+@keyframes slide-up-detailed-drone {
+    0% {
+      transform: translateY(100%);
+      opacity: 0.2;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    70% {
+      transform: translateY(-10%);
+    }
+    80% {
+      transform: translateY(-5%);
+    }
+    85% {
+      transform: translateY(-4%);
+    }
+    90% {
+      transform: translateY(-3%);
+    }
+
+    95% {
+      transform: translateY(-1%);
+    }
+    96% {
+      transform: translateY(-0.5%);
+    }
+    97% {
+      transform: translateY(-0.25%);
+    }
+    98% {
+      transform: translateY(-0.15%);
+    }
+    99% {
+      transform: translateY(-0.10%);
+    }
+    100% {
+      transform: translateY(-0.05%);
+    }
+  }
+  
+  .slide-up-detailed-drone {
+    animation: slide-up-detailed-drone 2s cubic-bezier(0,.99,.39,1.32);
+  }
+  
+  
+  
+  
+  
+
 .drone-details {
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
+    min-width: 599px;
     margin: 20px auto;
     padding: 20px;
     background-color: #2d2d2d;
@@ -20,26 +71,31 @@
   .drone-image {
     display: block;
     width: 100%;
-    max-width: 500px;
+    max-width: 650px;
+    min-width: 100px;
     height: auto;
     margin: 0 auto;
     border-radius: 5px;
   }
   
   .drone-specs {
+    font-family: "Raleway";
     margin-top: 20px;
     color: #ffffff;
     font-size: 16px;
     letter-spacing: 1px;
     font-weight: 300;
+    text-align: center;
   }
   
   .reviews-button {
+    font-family: "Raleway";
+    font-weight: 600;
     display: block;
     margin: 20px auto 0;
     padding: 10px 20px;
     background-color: #6a6969;
-    color: #ffffff;
+    color:#2d2d2d;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -47,6 +103,26 @@
   }
   
   .reviews-button:hover {
-    background-color: #7a7989;
+    font-size: 0.9em;
+  }
+
+  .drone-detailed-btn {
+    background-image: linear-gradient(270deg, rgb(7, 255, 193), rgb(6, 164, 216), fuchsia, purple);
+
+  }
+
+  .detailed-drone-title {
+    text-align: center;
+  background-image: linear-gradient(270deg, rgb(7, 255, 193), rgb(6, 164, 216), fuchsia, purple);
+  background-size: 400% 400%;
+  color: transparent;
+  -webkit-background-clip: text;
+  letter-spacing: 2px;
+  background-clip: text;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.103);
+  animation: gradientAnimation 10s ease infinite;
   }
   
