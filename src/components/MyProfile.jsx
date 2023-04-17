@@ -138,7 +138,8 @@ function MyProfile() {
                   <p>{review.comment}</p>
                   <h4>My Rating:</h4>
                   <div className="review-rating">
-                  <Ratings reviews={userReviews.filter(review => review.rating)} />
+                  <Ratings rating={review.rating} />
+
                   </div>
                   <Link to={`/reviews/edit/${review._id}`}>Edit Review</Link>
                 </div>
@@ -207,8 +208,5 @@ function MyProfile() {
       </div>
   );
 }
-      
-      
 
-  
 export default MyProfile;
