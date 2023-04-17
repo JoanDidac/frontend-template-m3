@@ -104,10 +104,15 @@
   
   .reviews-button:hover {
     font-size: 0.9em;
+    background-image: linear-gradient(270deg, rgb(7, 255, 193), rgb(6, 164, 216), fuchsia, purple);
+    box-shadow:  1px 5px 4px rgba(125, 124, 124, 0.631);
+    transform: translateY(-10%);
+    
   }
 
   .drone-detailed-btn {
-    background-image: linear-gradient(270deg, rgb(7, 255, 193), rgb(6, 164, 216), fuchsia, purple);
+    background-image: linear-gradient(270deg, rgb(4, 188, 249), fuchsia);
+    box-shadow: 1px 3px 4px rgba(125, 124, 124, 0.631);
 
   }
 
