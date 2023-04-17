@@ -13,19 +13,15 @@
       transform: translateY(-5%);
     }
     85% {
-      transform: translateY(-4%);
-    }
-    90% {
       transform: translateY(-3%);
     }
-
-    95% {
+    90% {
       transform: translateY(-1%);
     }
-    96% {
+    93% {
       transform: translateY(-0.5%);
     }
-    97% {
+    96% {
       transform: translateY(-0.25%);
     }
     98% {
@@ -35,13 +31,15 @@
       transform: translateY(-0.10%);
     }
     100% {
-      transform: translateY(-0.05%);
+      transform: translateY(0%);
     }
   }
   
   .slide-up-detailed-drone {
-    animation: slide-up-detailed-drone 2s cubic-bezier(0,.99,.39,1.32);
+    animation: slide-up-detailed-drone 2s cubic-bezier(0.25, 1, 0.5, 1);
   }
+  
+  
   
   
   
