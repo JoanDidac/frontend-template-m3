@@ -1,0 +1,52 @@
+.drone-details {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #2d2d2d;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .drone-model {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  .drone-image {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 5px;
+  }
+  
+  .drone-specs {
+    margin-top: 20px;
+    color: #ffffff;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 300;
+  }
+  
+  .reviews-button {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background-color: #6a6969;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .reviews-button:hover {
+    background-color: #7a7989;
+  }
+  
