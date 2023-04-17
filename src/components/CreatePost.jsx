@@ -38,7 +38,8 @@ function CreatePost() {
   };
 
   return (
-    <div>
+  <div>
+    <div className='edit-post-form  create-post-form'>
       <h2>Create a new Post</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="title">Title:</label>
@@ -63,9 +64,10 @@ function CreatePost() {
           value={postData.media}
           onChange={handleChange}
         />
+        
         {/* ---------------------- MAP LOCATION where img/vid were shot---------------------- */}
         
-        <label htmlFor="location.latitude">Latitude:</label>
+        {/* <label htmlFor="location.latitude">Latitude:</label>
         <input
           type="number"
           step="any"
@@ -81,11 +83,12 @@ function CreatePost() {
           name="location.longitude"
           value={postData.location.longitude}
           onChange={handleChange}
-        />
+        /> */}
 
         <button type="submit">Create Post</button>
       </form>
     </div>
+  </div>
   );
 }
 

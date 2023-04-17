@@ -53,6 +53,8 @@ function MyProfile() {
     fetchUserPosts();
   }, [user, isLoggedIn]);
 
+  
+
   const handleEditProfileClick = () => {
     setShowEditProfile(!showEditProfile);
     setEditingPostId(true);
@@ -63,8 +65,7 @@ function MyProfile() {
     button.classList.toggle("button-active");
   };
   
-  const button = document.querySelector("button");
-  button.addEventListener("click", handleEditProfileClick);
+  
 
   const handleMyReviewsClick = async () => {
     if (isLoggedIn) {
@@ -99,6 +100,7 @@ function MyProfile() {
   return (
     <div className="my-profile">
       <h2>My Profile</h2>
+      <p className="title-slogan">Control<strong>Your</strong><span className="my-profile-slogan">Content</span></p>
       <div className="glowing-btn-container">
         <div className="glowing-btn-wrapper">
           <div

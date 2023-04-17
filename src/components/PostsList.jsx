@@ -40,6 +40,7 @@ function PostsList() {
   return (
     <div className="postsList-container">
       <h2>All Posts Collection</h2>
+      <p className="postsList-slogan">Fly, Share, Enjoy, Repeat...</p>
       <button
         className="add-drone-button"
         onClick={handleCreatePostButtonClick}
