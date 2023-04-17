@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import postService from "../services/postService";
-
+import './PostDetails.css';
 
 
 function PostDetails() {
@@ -26,19 +26,25 @@ function PostDetails() {
   }
 
   return (
-    <div className="postDetails-container">
-      <div>
-        <img src={post.media} alt={post.title} />
+    <div className="post-details-container">
+      <div className="post-details-card">
+        <div className="post-details-image-container">
+          <img
+            className="post-details-image"
+            src={post.media}
+            alt={post.title}
+          />
+        </div>
         <div className="content-container">
-        
-          <h1>{post.title}</h1>
-          
-          <p>{post.message}</p>
-          
+          <h1 className="post-details-title">{post.title}</h1>
+          <p className="post-details-message">{post.message}</p>
         </div>
       </div>
     </div>
   );
+  
 }
+
+
 
 export default PostDetails;
