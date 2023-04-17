@@ -22,8 +22,17 @@ class ReviewsService {
     });
   }
   
-getReviews(){
-  return this.api.get('/').then(({ data }) => data);
+// getReviews(){
+//   return this.api.get('/').then(({ data }) => data);
+  
+// }
+getReviews() {
+  return this.api
+    .get('/')
+    .then(({ data }) => {
+      console.log('Fetched reviews in reviewsService:', data);
+      return data;
+    });
 }
 
 getReview(id){

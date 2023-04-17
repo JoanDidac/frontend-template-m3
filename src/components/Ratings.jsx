@@ -11,7 +11,7 @@ const calculateAverageRating = (reviews) => {
 
 const Ratings = ({ reviews, rating }) => {
     console.log('Reviews', reviews)
-  //const averageRating = calculateAverageRating(reviews);
+  // const averageRating = calculateAverageRating(reviews);
   const [avg, setAvg] = useState(0);
   const [droneIcons, setDroneIcons] = useState([]);
   const maxRating = 5;
