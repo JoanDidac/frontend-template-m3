@@ -399,7 +399,7 @@
 
 .review-item {
   color: black;
-  min-height:38vh;
+  max-height: fit-content;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -697,12 +697,18 @@
 }
 
 .create-drone-title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Raleway";
   text-align: center;
-  color: #ffffff;
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 20px;
+  background-image: linear-gradient(270deg, rgba(58, 58, 58, 1),silver, rgba(112, 112, 112, 1),silver, rgba(169, 169, 169, 1), rgba(211, 211, 211, 1));
+  background-size: 400% 400%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: 28px;
+  font-weight: 600;
+  padding: 5px 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: gradientAnimation 15s ease infinite;
 }
 
 .create-drone-form {
@@ -720,10 +726,11 @@
 }
 
 .create-drone-form input {
+  color: var(--glow-color-posts);
   padding: 10px;
   border: 1px solid #ffffff;
-  background-color: transparent;
-  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.086);
+
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   border-radius: 5px;
@@ -731,16 +738,16 @@
 }
 
 .create-drone-form input:focus {
-  border-color: #6a6969;
+  border-color: var(--glow-color-reviews);
 }
 
 .create-drone-submit {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  background-color: #6a6969;
-  color: #ffffff;
+  background-color: rgba(218, 58, 218, 0.75);
+  color: #2d2d2d;
   padding: 10px 20px;
-  margin-top: 20px;
+  margin-top: 40px;
   cursor: pointer;
   border: none;
   border-radius: 5px;
@@ -748,11 +755,10 @@
 }
 
 .create-drone-submit:hover {
-  padding: 8px 10px ;
-  font-size: 14.5px;
-  color: #2d2d2d;
-  font-size: 1rem;
-  background-image: radial-gradient(circle, rgb(95, 215, 255), darkorchid);
+ 
+  color: #dbd9d9;
+  font-size: 0.9rem;
+  background-image: radial-gradient(circle, rgba(47, 179, 224, 0.773), darkorchid 50%);
 }
 
 /* Add the slide-up keyframe animation */
