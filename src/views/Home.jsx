@@ -28,20 +28,7 @@ export default function Home() {
       <Carousel responsive={responsive}>
       <DroneCarousel />
       </Carousel>
-      {/* {drones.map(elem => {
-        return (
-          <div key={elem._id}>
-            <p>{elem.model}</p>
-            <img src={elem.imageUrl} alt={`${elem.model}`} />
-            <p>{elem.brand}</p> 
-            <p>Max Flight Time: {elem.specs?.maxFlightTime || "N/A"} minutes</p>
-            <p>Max Speed: {elem.specs?.maxSpeed || "N/A"} km/h</p>
-            <p>Range: {elem.specs?.range || "N/A"} km</p>
-            <p>Weight: {elem.specs?.weight || "N/A"} kg</p>
-            <p>Dimensions: {elem.specs?.dimensions || "N/A"}</p>
-          </div>
-        );
-      })} */}
+     
     </div>
   )
 }
