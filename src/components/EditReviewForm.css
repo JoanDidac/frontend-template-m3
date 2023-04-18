@@ -76,8 +76,10 @@
   
   .edit-review-form button:hover {
     font-size: 0.9em;
-    background-image: linear-gradient(270deg, rgb(7, 255, 193), purple);
-    box-shadow: 1px 5px 4px rgba(125, 124, 124, 0.631);
-    transform: translateY(-10%);
+    background-image: linear-gradient(270deg, #333, rgb(113, 112, 112) );
+    box-shadow: 5px 5px 4px rgba(125, 124, 124, 0.631);
+    transform: translateY(-7%) translateX(-3%);
+    color: rgba(255, 166, 0, 0.481);
+    letter-spacing: 2px;
   }
   
