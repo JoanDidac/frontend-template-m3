@@ -43,7 +43,6 @@ function MyProfile() {
       if (isLoggedIn) {
         setLoading(true);
         const posts = await postService.getPostsByUser(user._id);
-        console.log("Posts", posts);
         setTimeout(() => {
           setUserPosts(posts);
           setLoading(false);
@@ -166,7 +165,7 @@ function MyProfile() {
                   {showCreatePostForm && <CreatePost />}
                 </div>
               ) : (
-                <div className="posts-grid">
+                <div className="posts-grid" >
                   {userPosts.map((post) => (
                     <div key={post._id} className="post-item">
                       {!editingPostId || editingPostId !== post._id ? (

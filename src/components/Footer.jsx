@@ -15,26 +15,26 @@ const Footer = () => {
       <div className="footer-grid">
         <div className="column">
           <h4>Sky Pulse</h4>
-          <a href="/about">About</a>
-          <a href="/contact">Contact</a>
-          <a href="/support">Support</a>
+          <a href="https://github.com/JoanDidac">About</a>
+          <a href="/https://uifresh.net/wp-content/uploads/2021/12/Responsive-contact-form.png">Contact</a>
+          <a href="https://images7.memedroid.com/images/UPLOADED546/6400d6d79e07c.webp">Support</a>
         </div>
         <div className="column">
           <h4>Discover</h4>
-          <a href="/interests">Interests</a>
-          <a href="/enterprise">Enterprise</a>
-          <a href="/community">Community</a>
+          <a href="https://abzinnovation.com/?gclid=CjwKCAjw__ihBhADEiwAXEazJuZ3lRaza8HaCF2B9_jDSQI2sOfPeJ63mMaeDJFrWq4I0eDIhXD0XhoCf4MQAvD_BwE">Agriculture</a>
+          <a href="https://www.gsma.com/foundry/resources/project-spotlight-at-mwc-barcelona-2023-5g-enabling-enterprise-drones-to-fly-beyond-visual-line-of-sight/">Enterprise</a>
+          <a href="https://diydrones.com/">Community</a>
         </div>
         <div className="column">
           <h4>Discover</h4>
-          <a href="/safeflying">Safe Flying</a>
-          <a href="/law">Drone Law</a>
-          <a href="/cookies">Cookies</a>
+          <a href="https://www.oneair.es/normativa-drones-espana-aesa/">Safe Flying</a>
+          <a href="https://www.boe.es/doue/2019/152/L00045-00071.pdf">Drone Law</a>
+          <a href="https://images7.memedroid.com/images/UPLOADED430/636a71b802a95.webp">Cookies</a>
         </div>
         <div className="column">
           <h4>Professionals</h4>
-          <a href="/developer">Developer</a>
-          <a href="/maps">Maps</a>
+          <a href="https://www.flytnow.com/drone-api">Developer</a>
+          <a href="https://drones.enaire.es/">Maps Spain</a>
           <a href="/explore">Explore</a>
         </div>
       </div>
