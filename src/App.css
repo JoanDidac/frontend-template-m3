@@ -186,13 +186,13 @@
 /* <<<---- Landing Page & Video --->>> */
 .landing-page {
   position: relative;
-  overflow: hidden;
+  overflow:hidden;
 }
 
 .landing-video {
   width: 100%;
   height: auto;
-  min-height: 100%;
+  min-height: 150%;
   object-fit: cover;
 }
 .video-container {
