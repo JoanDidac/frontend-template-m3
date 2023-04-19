@@ -26,7 +26,24 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+    animation: scaleUp 2s ease-out forwards;
   }
+
+.background-video.dimmed {
+    filter: opacity(60%);
+  }
+  
+  @keyframes scaleUp {
+    0% {
+      transform: translateY(-110%) translate(-15%) scale(0.1);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
   
   .login-form {
     display: flex;
@@ -34,6 +51,10 @@
     background-color: rgba(255, 255, 255, 0.8);
     padding: 1rem 2rem;
     border-radius: 5px;
+  }
+
+  .login-form h1 {
+    color: ;
   }
   
   .login-form label {

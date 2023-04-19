@@ -60,6 +60,7 @@ export default function Login() {
       {formVisible && (
         <div className="login-form-container">
           <form className="login-form" onSubmit={handleSubmit}>
+          <h1>Log in</h1>
             <label>Email</label>
             <input required type="email" name="email" value={user.email} onChange={handleChange} />
             <label>Password</label>
