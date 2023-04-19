@@ -20,7 +20,9 @@ export default function Navbar() {
 
   const handleBurgerClick = () => {
     setMenuOpen(!menuOpen);
+    document.querySelector(".burger-menu").classList.toggle("menu-open");
   };
+  
 
   return (
     <div className={`navbar${menuOpen ? " menu-open" : ""}`}>

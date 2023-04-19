@@ -133,6 +133,26 @@
   transform: translateY(5px);
 }
 
+/* <<<--- animated burger menu to x and back --->>> */
+
+.burger-menu.menu-open {
+  background-color: transparent;
+}
+
+.burger-menu.menu-open:before,
+.burger-menu.menu-open:after {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0) rotate(45deg);
+}
+
+.burger-menu.menu-open:before {
+  transform: translate(-50%, 0) rotate(-45deg);
+}
+
+
+/* <<<--- animated burger menu to x and back --->>> */
+
 .menu-content {
   display: none;
   background-color: rgba(45, 45, 45, 0.95);
