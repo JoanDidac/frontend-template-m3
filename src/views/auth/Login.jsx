@@ -8,6 +8,7 @@ import './Login.css';
 export default function Login() {
   const { storeToken, authenticateUser, isLoggedIn } = useAuth(); 
   const [formVisible, setFormVisible] = useState(false);
+  const [videoDimmed, setVideoDimmed] = useState(false);
   const [user, setUser] = useState({
     email: '',
     password: ''
@@ -52,24 +53,54 @@ export default function Login() {
     // eslint-disable-next-line
   }, [isLoggedIn])
 
+  useEffect(() => {
+    if (formVisible) {
+      setTimeout(() => setVideoDimmed(true), 2000); // Match the animation duration
+    }
+  }, [formVisible]);
+  
+
   return (
     <div className="login-page">
-      <video className="background-video" autoPlay loop muted>
-        <source src="https://res.cloudinary.com/ddcimekqb/video/upload/v1681432428/rocky-passage_pykzr5.mp4" type="video/mp4" />
+      <video
+        className={`background-video${videoDimmed ? " dimmed" : ""}`}
+        autoPlay
+        loop
+        muted
+      >
+        <source
+          src="https://res.cloudinary.com/ddcimekqb/video/upload/v1681432428/rocky-passage_pykzr5.mp4"
+          type="video/mp4"
+        />
       </video>
       {formVisible && (
         <div className="login-form-container">
           <form className="login-form" onSubmit={handleSubmit}>
-          <h1>Log in</h1>
+          <h1>Login</h1>
             <label>Email</label>
-            <input required type="email" name="email" value={user.email} onChange={handleChange} />
+            <input
+              required
+              type="email"
+              name="email"
+              value={user.email}
+              onChange={handleChange}
+            />
             <label>Password</label>
-            <input required type="password" name="password" value={user.password} onChange={handleChange} />
-            {errorMessage && <p className="error-message">{errorMessage}</p>}
+            <input
+              required
+              type="password"
+              name="password"
+              value={user.password}
+              onChange={handleChange}
+            />
+            {errorMessage && (
+              <p className="error-message">{errorMessage}</p>
+            )}
             <button type="submit">Log in</button>
           </form>
         </div>
       )}
     </div>
-  )
+  );
+  
 }

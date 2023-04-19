@@ -17,6 +17,7 @@
     height: 100%;
     z-index: -1;
     object-fit:cover;
+    transition: filter 1s ease;
     
     
   }
@@ -51,13 +52,15 @@
     background-color: rgba(255, 255, 255, 0.8);
     padding: 1rem 2rem;
     border-radius: 5px;
+    width: calc(22.3%);
   }
 
   .login-form h1 {
-    color: ;
+    color: #333;
   }
   
   .login-form label {
+    color: #333333ae;
     margin-bottom: 0.5rem;
   }
   
@@ -68,7 +71,7 @@
   
   .login-form button {
     padding: 0.5rem 1rem;
-    background-color: #007bff;
+    background-color: #161fa3c9;
     color: white;
     border: none;
     border-radius: 5px;
