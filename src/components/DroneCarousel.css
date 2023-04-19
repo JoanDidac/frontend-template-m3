@@ -3,7 +3,6 @@
     width: 80vw;
     margin: 0 auto;
     padding: 30px 20px;
-
 }
 
 .DroneCarousel h1 {
@@ -17,9 +16,11 @@
     font-size: 42px;
     font-weight: 700;
     padding: 5px 10px;
-    margin: 10px 0;
-    margin-bottom: 45px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
     text-shadow: 0px 10px 100px rgba(0, 0, 0, 0.242);
+    transform: translateX(-20px);
 }
 
 .react-multi-carousel-list {
@@ -28,21 +29,23 @@
     margin-right: auto;
 }
 
-
 .react-multi-carousel-dot-list {
     width: 104vw;
+    height: 4%;
     margin-left: auto;
     margin-right: auto;
     gap: 5px;
-
+    transform: translateX(-30px);
+   
 }
 
 .drone-img-carousel {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
-
 
 .carousel-item {
     padding: 0 10px;
@@ -51,6 +54,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.carousel-item:hover .drone-img-carousel {
+    transform: scale(1.02);
+    box-shadow: 0 0px 5px rgba(249, 158, 1, 0.2);
 }
 
 .carousel-item h2 {
@@ -90,7 +98,6 @@
 
 .carousel-item button:hover {
     background-image: linear-gradient(270deg, rgb(7, 255, 193), fuchsia);
-    /* box-shadow: 8px 0 12px rgba(255, 166, 251, 0.615), -8px 0 12px rgba(201, 84, 255, 0.516); */
     transform: translateY(10px);
     color: #242424;
     font-weight: bold;
