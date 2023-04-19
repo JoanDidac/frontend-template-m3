@@ -902,6 +902,30 @@ body {
   flex-direction: column;
 }
 
+.post-card .post-content {
+  padding: 20px;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.post-card .post-content h3 {
+  margin-bottom: 10px;
+}
+
+.post-card .post-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.post-content-anchors {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 20px 20px;
+  background-color: #161b22;
+}
+
 .post-card img {
   width: 100%;
   height: 280px;
@@ -926,7 +950,8 @@ body {
   color: #ffffff;
 }
 
-.post-card .post-content a {
+.post-card .post-content a,
+.post-card .post-content-anchors a {
   
   margin: 0;
   width: 100%;
@@ -944,12 +969,30 @@ body {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   clip-path: polygon(15px 0, 100% 0, calc(100% - 15px) 100%, 0 100%);
 }
+.post-card .post-content a:first-child,
+.post-card .post-content-anchors a:first-child {
+  margin-right: 8px;
+  clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 100%, 15px 100%);
+}
+
+.post-card .post-content a:hover,
+.post-card .post-content-anchors a:hover {
+  background-color: #4f92e9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.post-card .post-content a:focus,
+.post-card .post-content-anchors a:focus {
+  outline: none;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
 
 .post-content-anchors{
   display: flex;
   justify-content: space-around;
   width: 100%;
   margin-left: calc(-3%);
+ 
 }
 .postDetails-container .post-content-anchors a {
 

@@ -25,10 +25,10 @@ function PostPreview({ post }) {
       <div className="post-content">
         <h3>{post.title}</h3>
         <p className="post-message">{post.message}</p>
-        <div className='post-content-anchors'>
+      </div>
+      <div className='post-content-anchors'>
         <Link to={`/posts/${post._id}`} >Edit Post</Link>
         <Link to={`/posts/${post._id}`}>See more</Link>
-        </div>
       </div>
     </div>
   );
