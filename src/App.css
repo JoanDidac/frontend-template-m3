@@ -831,12 +831,13 @@ body {
 }
 
 .postsList-container {
-  max-width: 1800px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  
 }
 
 .postsList-container h2 {
@@ -885,8 +886,10 @@ body {
 
 .postsList-card {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(583px, 1fr));
+  /* grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); */
+  grid-template-columns: repeat(2, minmax(400px, 1fr));
   gap: 20px;
+  
 }
 
 .post-card {
