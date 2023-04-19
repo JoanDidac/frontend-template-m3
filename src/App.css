@@ -1040,6 +1040,11 @@ body {
   padding: 40px 20px;
 }
 
+.single-post:hover {
+  transform: translateY(-0.5%) translateX(-0.5%);
+  box-shadow: 2px 2px 2px rgba(58, 60, 113, 0.192);
+}
+
 /* <<<--- Post Details --->>> */
 
 .postDetails-container {
