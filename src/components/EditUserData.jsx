@@ -25,10 +25,10 @@ const EditUserData = () => {
         // Update the user data in the state
         setUserData(data);
       });
-      toast.success('Profile updated successfully');
+      toast.success('Profile updated successfully ☜(⌒▽⌒)☞');
     })
     .catch((error) => {
-      toast.error('Failed to update profile');
+      toast.error('Failed to update profile ¯\_(⊙︿⊙)_/¯');
       console.log(error);
     });
 };

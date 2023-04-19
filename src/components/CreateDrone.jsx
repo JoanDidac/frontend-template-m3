@@ -38,12 +38,12 @@ function CreateDrone() {
       await droneService.createDrone(droneData);
       setSubmitted(true);
       setTimeout(() => {
-        toast.success("Drone created successfully!");
+        toast.success(" (∩｀-´)⊃━☆ﾟ.*･｡ﾟ Drone created successfully! ");
         setFormHidden(true);
       }, 1000);
     } catch (error) {
       console.error("Error creating drone:", error);
-      toast.error("Error creating drone, please try again.");
+      toast.error("Error creating drone ヽ༼ ಠ益ಠ ༽ﾉ");
     }
   };
 

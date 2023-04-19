@@ -33,11 +33,11 @@ function EditPostData({ postId , inMyProfile, setSubmittingForm, setEditingPostI
 
     try {
         await postService.editPost(postId, updatedPost);
-        toast.success('Post updated successfully');
+        toast.success('Post updated successfully -`ღ´-');
         setSubmittingForm(false); // Set submittingForm back to false after successful submission
         setEditingPostId(null); // Hide the form after successful submission
       } catch (error) {
-        toast.error('Error updating post:🤬');
+        toast.error('Error updating post: щ（ﾟДﾟщ）');
         setSubmittingForm(false); // Set submittingForm back to false even after an error
       }
     };

@@ -28,12 +28,12 @@ function CreateReview({ droneId, userId, onSave }) {
         }
       } else {
         await reviewsService.createReview(reviewData);
-        toast.success('Review submitted successfully!');
+        toast.success('(☞ﾟヮﾟ)☞ Review submitted successfully! ');
         onSave();
       }
     } catch (error) {
       console.error('Error submitting review:', error);
-      alert('Error submitting review, please try again.');
+      toast.error('Error submitting review (° ͜ʖ͡°)╭∩╮');
     }
     
   };

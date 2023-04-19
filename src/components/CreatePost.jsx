@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import postService from '../services/postService';
+import toast from 'react-hot-toast';
 
 function CreatePost() {
   const [postData, setPostData] = useState({
@@ -30,10 +31,10 @@ function CreatePost() {
     event.preventDefault();
     try {
       await postService.createPost(postData);
-      alert("Post created successfully!");
+      toast.success("Post created successfully! ᕦ(ò_óˇ)ᕤ");
     } catch (error) {
       console.error("Error creating post:", error);
-      alert("Error creating post, please try again.");
+      toast.error("Error creating post, щ（ﾟДﾟщ）");
     }
   };
 

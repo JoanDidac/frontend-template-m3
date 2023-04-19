@@ -25,10 +25,10 @@ const EditReview = () => {
     e.preventDefault();
     try {
         await reviewsService.editReview(id, review);
-        toast.success('Review updated successfully');
+        toast.success('Review updated successfully ᕙ(⇀‸↼‶)ᕗ');
         navigate('/myprofile');
       } catch (error) {
-        toast.error('Failed to update review');
+        toast.error('Failed to update review щ（ﾟДﾟщ）');
         console.log(error);
       }
     };
