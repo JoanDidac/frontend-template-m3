@@ -35,10 +35,10 @@ export default function Login() {
         navigate('/');
         toast.success('Welcome back! ԅ(≖‿≖ԅ)')
       } else {
-        setErrorMessage('Unable to authenticate user щ（ﾟДﾟщ）')
+        toast.error('Unable to authenticate user щ（ﾟДﾟщ））')
       }
     } catch (error) {
-      setErrorMessage('Unable to authenticate user щ（ﾟДﾟщ）');
+      toast('Unable to authenticate user ☞ щ（ﾟДﾟщ）');
     }
   }
 
