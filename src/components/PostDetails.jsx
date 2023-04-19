@@ -21,6 +21,33 @@ function PostDetails() {
     fetchPost();
   }, [id]);
 
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const day = date.getDate();
+    const monthIndex = date.getMonth();
+    const year = date.getFullYear();
+
+    const monthNames = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+
+    const monthName = monthNames[monthIndex];
+
+    return `${day} ${monthName} ${year}`;
+  };
+
+
   if (!post) {
     return <div>Loading...</div>;
   }
@@ -37,14 +64,12 @@ function PostDetails() {
         </div>
         <div className="content-container">
           <h1 className="post-details-title">{post.title}</h1>
+          <h6 className="post-details-timestamp">{formatDate(post.createdAt)}</h6>
           <p className="post-details-message">{post.message}</p>
         </div>
       </div>
     </div>
   );
-  
 }
-
-
 
 export default PostDetails;

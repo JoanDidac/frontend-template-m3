@@ -26,7 +26,7 @@
     position: relative;
     width: 100%;
     height: calc(100vh - 150px); /* Adjust this value according to the combined height of your navbar and footer */
-    overflow: hidden;
+    overflow: hidden;border-radius: 3px;
   }
   
   .post-details-image {
@@ -58,11 +58,17 @@
     letter-spacing: 5px;
   }
   
+  .post-details-timestamp {
+    transform: translateY(-200%);
+    font-family: monospace;
+    font-size: 1em;
+  }
   .post-details-message {
     white-space: pre-wrap;
     font-size: 18px;
     line-height: 1.5;
     width: 80%;
     text-align: center;
+    transform: translateY(-20px);
   }
   
