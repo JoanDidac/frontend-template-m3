@@ -403,10 +403,12 @@
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
   padding: 10px 15px;
-  margin: 5px;
+  margin-left: 14%;
+  transform: translateX(-20%);
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s ease;
+
 }
 
 .drone-button:hover {
