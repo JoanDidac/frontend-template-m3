@@ -903,6 +903,7 @@ body {
 
 .post-card {
   position: relative;
+  /* background-color: rgb(17, 18, 30); */
   background-color: #161b22;
   border-radius: 10px;
   overflow: hidden;
@@ -920,19 +921,23 @@ body {
 
 .post-card .post-content h3 {
   margin-bottom: 10px;
+  color: rgb(239,239,237);
+  
 }
 
 .post-card .post-content p {
   font-size: 1rem;
   line-height: 1.5;
-  color: #ffffff;
+  color: rgb(239,239,237);
+
 }
 
 .post-content-anchors {
   display: flex;
   justify-content: space-around;
   padding: 0 20px 20px;
-  background-color: #161b22;
+  /* background-color: #161b22; */
+  /* background-color: rgb(17, 18, 30); */
 }
 
 .post-card img {
@@ -956,7 +961,7 @@ body {
 .post-card .post-content p {
   font-size: 1rem;
   line-height: 1.5;
-  color: #ffffff;
+  color: rgb(239,239,237);
 }
 
 .post-card .post-content a,
@@ -969,8 +974,8 @@ body {
   display: inline-block;
   width: calc(40% - 4px);
   padding: 10px;
-  background-color: #58a6ff;
-  color: #ffffff;
+  background-color: #05376f;
+  color: rgb(239,239,237);
   font-weight: 600;
   text-decoration: none;
   text-align: center;
@@ -1005,7 +1010,7 @@ body {
 }
 .postDetails-container .post-content-anchors a {
 
-  color: #ffffff;
+  color: rgb(239,239,237);
   font-size: 16px;
   text-transform: uppercase;
   padding: 10px 20px;
@@ -1021,7 +1026,7 @@ body {
 }
 
 .post-card .post-content a:hover {
-  background-color: #4f92e9;
+  background-color: #014296;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
