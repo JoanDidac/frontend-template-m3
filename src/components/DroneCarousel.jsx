@@ -7,7 +7,7 @@ import "react-multi-carousel/lib/styles.css";
 import droneService from "../services/droneService";
 import reviewsService from "../services/reviewsService";
 import Ratings from "./Ratings";
-import handleSeeMore from "./LandingPage";
+//import handleSeeMore from "./LandingPage";
 import Loading from "./Loading";
 
 export const responsive = {

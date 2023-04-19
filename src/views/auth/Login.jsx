@@ -3,9 +3,11 @@ import toast from 'react-hot-toast';
 import { useAuth } from '../../hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
 import authService from '../../services/authService';
+import './Login.css';
 
 export default function Login() {
   const { storeToken, authenticateUser, isLoggedIn } = useAuth(); 
+  const [formVisible, setFormVisible] = useState(false);
   const [user, setUser] = useState({
     email: '',
     password: ''
@@ -43,20 +45,30 @@ export default function Login() {
     // When the component first renders, check if user is already logged in and redirects
     if (isLoggedIn) {
       navigate('/')
+    } else {
+      setTimeout(() => setFormVisible(true), 2000);
     }
+
     // eslint-disable-next-line
   }, [isLoggedIn])
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>Email</label>
-        <input required type="email" name="email" value={user.email} onChange={handleChange} />
-        <label>Password</label>
-        <input required type="password" name="password" value={user.password} onChange={handleChange} />
-        {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-        <button type="submit">Log in </button>
-      </form>
+    <div className="login-page">
+      <video className="background-video" autoPlay loop muted>
+        <source src="https://res.cloudinary.com/ddcimekqb/video/upload/v1681432428/rocky-passage_pykzr5.mp4" type="video/mp4" />
+      </video>
+      {formVisible && (
+        <div className="login-form-container">
+          <form className="login-form" onSubmit={handleSubmit}>
+            <label>Email</label>
+            <input required type="email" name="email" value={user.email} onChange={handleChange} />
+            <label>Password</label>
+            <input required type="password" name="password" value={user.password} onChange={handleChange} />
+            {errorMessage && <p className="error-message">{errorMessage}</p>}
+            <button type="submit">Log in</button>
+          </form>
+        </div>
+      )}
     </div>
   )
 }
