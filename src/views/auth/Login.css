@@ -62,16 +62,18 @@
   .login-form label {
     color: #333333ae;
     margin-bottom: 0.5rem;
+    
   }
   
   .login-form input {
     margin-bottom: 1rem;
     padding: 0.5rem;
+    
   }
   
   .login-form button {
     padding: 0.5rem 1rem;
-    background-color: #161fa3c9;
+    background-color: #101992c9;
     color: white;
     border: none;
     border-radius: 5px;
