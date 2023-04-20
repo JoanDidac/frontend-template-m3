@@ -921,6 +921,10 @@ body {
   flex-direction: column;
 }
 
+.post-card:hover {
+  background-color: rgba(10, 29, 105, 0.124);
+}
+
 .post-card .post-content {
   padding: 20px;
   flex-direction: column;

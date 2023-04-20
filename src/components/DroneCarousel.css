@@ -25,6 +25,7 @@
 
 .react-multi-carousel-list {
     width: 100vw;
+    margin-bottom: 25px;
     margin-left: auto;
     margin-right: auto;
 }
