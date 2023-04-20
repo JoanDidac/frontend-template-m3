@@ -4,6 +4,7 @@ import droneService from '../services/droneService';
 import  DroneCarousel from '../components/DroneCarousel.jsx';
 import Carousel from 'react-multi-carousel';
 import { responsive }  from '../components/DroneCarousel';
+import VideoSection from '../components/ImageSection';
 
 export default function Home() {
   const [drones, setDrones] = useState([])
@@ -28,7 +29,8 @@ export default function Home() {
       <Carousel responsive={responsive}>
       <DroneCarousel />
       </Carousel>
-     
+      <VideoSection/>
+      
     </div>
   )
 }
