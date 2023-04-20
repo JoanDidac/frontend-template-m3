@@ -9,17 +9,6 @@ Sky Pulse is a web application designed to provide users with an engaging and in
 
 ---
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-
-### Prerequisites
-
-- Node.js
-- npm
-
-
-## Features
 ### MVP
 User can sign up and create a new account
 User can login
