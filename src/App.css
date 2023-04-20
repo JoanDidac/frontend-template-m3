@@ -285,6 +285,8 @@
 
 /* <<< Drones List --->>> */
 
+
+
 .add-drone-button {
   background-image: linear-gradient(to left, #6a6969, #333);
   border: none;
@@ -318,6 +320,11 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  
+  background-image: url('/Users/jd/Desktop/coding/frontend-template-m3/src/assets/pentagon-background.png');
+
+  
+  
 }
 
 .droneList-header p {
@@ -846,7 +853,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  
+  background-image: url('/src/assets/pentagon-background.png');
+  background-size: 100% ;
 }
 
 .postsList-container h2 {
@@ -1140,6 +1148,8 @@ body {
   align-items: center;
   font-family: 'Arial', sans-serif;
   color: #3c3c3c;
+  background-image: url('/src/assets/pentagon-background.png');
+  background-size: 100% ;
 }
 
 .title-slogan {
