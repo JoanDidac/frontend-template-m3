@@ -5,7 +5,7 @@
 /* <<<--- NAVBAR --->>> */
 
 .navbar {
-  
+  position: absolute;
   background-color: #2d2d2d;
   color: #c0bebe;
   display: flex;

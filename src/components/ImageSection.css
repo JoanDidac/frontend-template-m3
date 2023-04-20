@@ -54,9 +54,10 @@
 }
 
 .image-section a {
-  color: aliceblue;
+  color: rgb(243, 170, 0);
   text-decoration: none;
   font-size: 0.9em;
+  font-weight: 600;
 }
 
 .image-section h1 {
@@ -71,7 +72,8 @@
 
 .image-text {
   font-family: "Raleway";
-  font-weight: 400;
+  font-weight: 600;
+  font-size: 1.2em;
   position: absolute;
   top: 0;
   left: 0;
