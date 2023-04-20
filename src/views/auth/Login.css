@@ -3,10 +3,12 @@
     width: 100%;
     height: calc(100vh);
     overflow: hidden;
-    margin-bottom: -60px;
+    margin-bottom: -20px;
+    margin-top: 40px;
+    
   }
   
-  .background-video {
+  /* .background-video {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -20,7 +22,7 @@
     transition: filter 1s ease;
     
     
-  }
+  } */
   
   .login-form-container {
     display: flex;
@@ -28,6 +30,7 @@
     align-items: center;
     height: 100%;
     animation: scaleUp 2s ease-out forwards;
+   
   }
 
 .background-video.dimmed {

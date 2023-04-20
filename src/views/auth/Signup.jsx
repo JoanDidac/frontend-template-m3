@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import authService from '../../services/authService';
+import './Signup.css';
 
 export default function Signup() {
   const [user, setUser] = useState({
@@ -41,8 +42,8 @@ export default function Signup() {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className='login-page login-form-container ' >
+      <form className='login-form' onSubmit={handleSubmit}>
         <label>Username</label>
         <input required type="text" name="username" value={user.username} onChange={handleChange} />
         <label>Email</label>
