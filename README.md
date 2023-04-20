@@ -3,7 +3,9 @@ Sky Pulse is a web application designed to provide users with an engaging and in
 
 ![Sky Pulse Landing Page](/src//assets//Sky-pulse%20landing.png)
 ![Sky Pulse My Profile Page](/src//assets//Sky-pulse%20my%20profile.png)
+![Uploading Sky-pulse landing.png…]()
 
+![Uploading Sky-pulse my profile.png…]()
 
 Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
