@@ -18,31 +18,9 @@ These instructions will get you a copy of the project up and running on your loc
 - Node.js
 - npm
 
-### Installation
 
-1. Clone the frontend repository:
-
-```bash
-git clone https://github.com/JoanDidac/frontend-template-m3.git
-Clone the backend repository:
-bash
-Copy code
-git clone https://github.com/JoanDidac/backend-template-m3.git
-In both repositories, change the sample.env file name to .env.
-
-Install the required dependencies in both repositories:
-
-bash
-Copy code
-npm install
-Start the development server for both repositories:
-bash
-Copy code
-npm run start
-The frontend will run on port 3000, and the backend will run on the specified port in the .env file.
-
-Features
-MVP
+##Features
+##MVP
 User can sign up and create a new account
 User can login
 User can see a list of general drones
@@ -56,19 +34,19 @@ User can comment the posts
 User can access my profile control panel
 user can add/delete post, reviews and modify them at will.
 User can log out
-Backlog
+##Backlog
 Mapbox to show where the post was taken and which drone was used
 Like button for drones
-Built With
+##Built With
 React - The web framework used
 Node.js - Backend server
 Express - Web application framework
-Code Stats
+##Code Stats
 Number of functions: 27
 Number of variables: 34
 Number of useEffects: 9
 Number of hooks: 13
-Useful links
+##Useful links
 Presentation slides
 Backend repository
 Frontend repository
