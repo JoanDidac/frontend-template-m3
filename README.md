@@ -4,8 +4,8 @@
 
 Sky Pulse is a web application designed to provide users with an engaging and intuitive way to explore and discover their favorite images.
 
-![Sky Pulse Landing Page](/src/assets/Sky-pulse landing.png)
-![Sky Pulse My Profile Page](/src/assets/Sky-pulse my profile.png)
+![Sky Pulse Landing Page](/src/assets/Sky-pulse%20landing.png)
+![Sky Pulse My Profile Page](/src/assets/Sky-pulse%20my%20profile.png)
 
 ---
 
