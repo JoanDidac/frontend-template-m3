@@ -1,12 +1,19 @@
 .drone-rating {
     display: flex;
   }
+
+  
   
   .drone-rating-icon {
     
     width: 20px;
     height: 20px;
     margin-right: 4px;
+  }
+  .drone-rating-icon.active:hover,
+  .drone-rating-icon:hover {
+    width: 30px;
+    height: 30px;
   }
   
   .drone-rating-icon.active {
