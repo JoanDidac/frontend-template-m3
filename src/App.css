@@ -6,7 +6,7 @@
 
 .navbar {
   position: absolute;
-  background-color: #2d2d2d;
+  background-color: rgb( 40, 44, 44);
   color: #c0bebe;
   display: flex;
   align-items: center;
@@ -321,7 +321,7 @@
   justify-content: center;
   text-align: center;
   
-  background-image: url('/Users/jd/Desktop/coding/frontend-template-m3/src/assets/pentagon-background.png');
+  background-image: url('/src/assets/pentagon-background.png');
 
   
   

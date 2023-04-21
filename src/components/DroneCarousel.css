@@ -28,9 +28,11 @@
     margin-bottom: 25px;
     margin-left: auto;
     margin-right: auto;
+    background-image: url('/src/assets/triangle-upwards-bg.png');
+    background-position-y: 12px;
 
     background-image: url('/src//assets/triangle-upwards-background.png');
-background-position-y: -150px;
+    background-position-y: 12px;
 }
 
 .react-multi-carousel-dot-list {

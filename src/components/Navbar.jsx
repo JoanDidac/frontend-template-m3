@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
-import logo from "../assets/icon-dark2.png";
+import logo from "../assets/sky-pulse-icon no background presentation.png";
 
 export default function Navbar() {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
