@@ -3,7 +3,8 @@
     width: 100%;
     height: calc(100vh);
     overflow: hidden;
-    margin-bottom: -60px;
+    margin-bottom: 0px;
+    /* background-image: url('https://res.cloudinary.com/ddcimekqb/video/upload/v1681432281/city-timelapse_bg04ol.mp4'); */
   }
   
   .background-video {
@@ -18,17 +19,38 @@
     z-index: -1;
     object-fit:cover;
     transition: filter 1s ease;
-    background-image: url('https://res.cloudinary.com/ddcimekqb/video/upload/v1681432281/city-timelapse_bg04ol.mp4');
-    
-    
+   
   }
+
+  /* .background-video-signup {
+
+  } */
+
+  /* <<<--- Signup electricity H1 --->>> */
+
+  .signup-title h1 {
+   font-family: "Raleway";
+   font-weight: lighter;
+   font-size: 4em;
+   color: #333;
+  }
+  .metal-gradient {
+    background: linear-gradient(45deg, #333, #666, #333);
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+  }
+  
+  /* <<<--- Signup electricity H1 --->>> */
   
   .login-form-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
     height: 100%;
     animation: scaleUp 2s ease-out forwards;
+ 
   }
 
 .background-video.dimmed {
@@ -54,6 +76,8 @@
     padding: 1rem 2rem;
     border-radius: 5px;
     width: calc(22.3%);
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .login-form h1 {
