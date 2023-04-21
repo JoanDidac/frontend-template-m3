@@ -6,7 +6,7 @@ import facebookIcon from '../assets/logo-facebook.png';
 import twitterIcon from '../assets/icon-twitter.png'
 import twitchIcon from '../assets/icon-twitch2.png';
 import linkdinIcon from '../assets/icon-linkdin.png'
-import logoFooter from '../assets/logo-skypulse-footer.png';
+import logoFooter from '../assets/logo-skypulse-footer-removebg-preview.png';
 import handleLogoClick from './Navbar';
 
 const Footer = () => {
