@@ -29,10 +29,13 @@
   /* <<<--- Signup electricity H1 --->>> */
 
   .signup-title h1 {
-   font-family: "Raleway";
-   font-weight: lighter;
-   font-size: 4em;
-   color: #333;
+    position: relative;
+   font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI';
+   font-weight: 200;
+   font-size: 4.5em;
+   color: rgb(15, 11, 15);
+
+   transform: translateY(-50px);
   }
   .metal-gradient {
     background: linear-gradient(45deg, #333, #666, #333);
@@ -40,6 +43,39 @@
     color: transparent;
     -webkit-background-clip: text;
   }
+
+  .electricity-container {
+    position: relative;
+  }
+
+  .electricity-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    
+  }
+  
+  .electricity-text {
+    font-family: "Raleway";
+    font-weight: lighter;
+    font-size: 4em;
+    fill: #333;
+    z-index: 1000;
+   
+     filter: url(#electricity);
+    animation: electricity-animation 0.1s infinite alternate; 
+  }
+  
+  @keyframes electricity-animation {
+    from {
+      filter: url(#electricity);
+    }
+    to {
+      filter: url(#electricity) brightness(2);
+    }
+  }
+  
   
   /* <<<--- Signup electricity H1 --->>> */
   
