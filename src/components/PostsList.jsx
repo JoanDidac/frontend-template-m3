@@ -3,11 +3,16 @@ import postService from "../services/postService";
 import CreatePost from "./CreatePost";
 import PostPreview from "./PostPreview";
 import { CircleLoader } from "react-spinners";
+import { isElementOfType } from "react-dom/test-utils";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../hooks/useAuth";
 
 function PostsList() {
   const [posts, setPosts] = useState([]);
   const [showCreatePostForm, setShowCreatePostForm] = useState(false);
   const [loading, setLoading] = useState(true);
+  const { user, isLoggedIn } = useAuth();
+  const navigate = useNavigate();
   // const [showPostPreview, setShowPostPreview] = useState(false);
 
   useEffect(() => {
@@ -31,7 +36,11 @@ function PostsList() {
   }, []);
 
   const handleCreatePostButtonClick = () => {
+    if ( isLoggedIn ) {
     setShowCreatePostForm(!showCreatePostForm);
+    } else {
+      navigate('/login');
+    }
   };
   // const handlePostPreviewClick = () => {
   //   setShowPostPreview(!showPostPreview);

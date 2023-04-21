@@ -3,11 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import droneService from '../services/droneService';
 import { CircleLoader } from "react-spinners"; // Import the Loading component
 import './Loading.css';
+import { useAuth } from '../hooks/useAuth';
+
 
 export default function LandingPage() {
   const [drone, setDrone] = useState(null);
   const [loading, setLoading] = useState(true); // Add a loading state
   const navigate = useNavigate();
+  const { user, isLoggedIn } = useAuth();
 
   useEffect(() => {
     const fetchDrone = async () => {
@@ -24,8 +27,10 @@ export default function LandingPage() {
   }, []);
 
   const handleSeeMore = () => {
-    if (drone) {
+    if (drone && isLoggedIn) {
       navigate(`/drones/${drone._id}`);
+    } else {
+      navigate('/login');
     }
   };
 

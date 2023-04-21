@@ -7,7 +7,7 @@ import reviewsService from "../services/reviewsService";
 import { useAuth } from "../hooks/useAuth";
 import Rating from "./Rating";
 import { CircleLoader } from 'react-spinners';
-
+import { useNavigate } from "react-router-dom";
 
 function DronesList() {
   const [drones, setDrones] = useState([]);
@@ -22,6 +22,7 @@ function DronesList() {
   const { isLoggedIn } = useAuth();
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
 
 
@@ -56,15 +57,24 @@ function DronesList() {
   }, []);
 
   const handleCreateDroneButtonClick = () => {
+    if (isLoggedIn) {
     setShowCreateDroneForm(!showCreateDroneForm);
+    } else {
+      navigate('/login');
+    }
   };
 
   const handleReviewButtonClick = async (droneId) => {
-    if (selectedDrone === droneId) {
+    if (selectedDrone === droneId ) {
       setShowReviewForm(!showReviewForm);
     } else {
       setSelectedDrone(droneId);
       setShowReviewForm(true); // Hide the review form when displaying the reviews
+    }
+    if (isLoggedIn){
+      setShowReviewForm(!showReviewForm);
+    } else {
+      navigate('/login');
     }
   };
 

@@ -62,7 +62,7 @@ export default function Login() {
 
   return (
     <div className="login-page">
-    <h1 className='login-title' >You must be Logged in to access My Profile ⍜</h1>
+    <h1 className='login-title' >You must be Logged in to have access to content ⍜</h1>
       <video
         className={`background-video${videoDimmed ? " dimmed" : ""}`}
         autoPlay

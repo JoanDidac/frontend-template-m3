@@ -9,6 +9,7 @@ import reviewsService from "../services/reviewsService";
 import Ratings from "./Ratings";
 //import handleSeeMore from "./LandingPage";
 import Loading from "./Loading";
+import { useAuth } from "../hooks/useAuth";
 
 export const responsive = {
   superLargeDesktop: {
@@ -35,9 +36,14 @@ export default function DroneCarousel() {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+  const { user, isLoggedIn } = useAuth();
 
   const handleSeeMore = (droneId) => {
+    if (isLoggedIn) {
     navigate(`/drones/${droneId}`);
+    } else {
+      navigate('/login');
+    }
   };
 
   useEffect(() => {
