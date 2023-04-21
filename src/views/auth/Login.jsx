@@ -97,6 +97,7 @@ export default function Login() {
               <p className="error-message">{errorMessage}</p>
             )}
             <button type="submit">Log in</button>
+            <a href='/signup'>I don't have an account yet  <strong>☞ Sign up</strong></a>
           </form>
         </div>
       )}
