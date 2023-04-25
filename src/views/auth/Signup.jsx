@@ -88,7 +88,7 @@ export default function Signup() {
           <label>Email</label>
           <input required type="email" name="email" value={user.email} onChange={handleChange} />
           <label>Password</label>
-          <input required type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+          <input required type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Min 6 letters,one number and one uppercase letter"/>
           <label>Repeat the password</label>
           <input required type="password" name="passwordControl" value={passwordControl} onChange={(e) => setPasswordControl(e.target.value)} />
           {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}

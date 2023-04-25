@@ -144,6 +144,12 @@
   .login-form button:hover {
     background-color: #0056b3;
   }
+
+  .login-form :placeholder-shown {
+    font-size: 10px;
+    letter-spacing: -0.3px;
+    text-transform:capitalize;
+  }
   
   .error-message {
     color: red;
