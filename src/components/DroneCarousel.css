@@ -47,7 +47,7 @@
 }
 
 .drone-img-carousel {
-    width: 117%;
+    width: 110%;
     height: 220px;
     object-fit: cover;
     border-radius: 5px;
@@ -56,8 +56,11 @@
 }
 
 .carousel-item {
-    padding: 0 10px;
-    margin-left: 20px;
+    padding: 0 5px;
+    margin-left: calc(5%);
+    margin-right: calc(10%);
+    /* margin-left: auto;
+    margin-right: auto; */
     width: 300px;
     display: flex;
     flex-direction: column;
@@ -65,7 +68,7 @@
 }
 
 .carousel-item:hover .drone-img-carousel {
-    transform: scale(1.05) translateY(5px);;
+    transform: scale(1.03) translateY(5px);;
     box-shadow: 0 0px 5px rgba(249, 158, 1, 0.2);
 }
 
