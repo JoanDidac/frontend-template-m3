@@ -33,6 +33,7 @@ const VideoSection = () => {
 
   return (
     <div className="image-section">
+    <h1 className="image-section-h1">Meet Our Partners</h1>
       <hr />
       <div className="image-container">
         {isLoading && <Spinner />}

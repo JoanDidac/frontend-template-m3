@@ -1,6 +1,6 @@
 .image-section {
-  height: 83vh;
-  max-height: 550px;
+  height: 90vh;
+  max-height: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,7 +10,19 @@
   background-image: url('/src/assets/pentagon-background.png');
   background-repeat:repeat;
  
-  
+}
+
+.image-section-h1 {
+  font-family: "Raleway";
+  width: 300px;
+  margin-left: 41%;
+  margin-right: 40%;
+  /* color: rgba(15, 18, 23, 0.906); */
+  color:#2d2d2d;
+  /* color: rgb(0, 51, 103); */
+  padding-top: 20px;
+  margin-bottom: -20px;
+  letter-spacing: 1.5px;
   
 }
 
