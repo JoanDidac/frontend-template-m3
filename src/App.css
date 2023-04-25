@@ -869,10 +869,11 @@ body {
   font-size: 76px;
   font-weight: 700;
   padding: 5px 10px;
-  margin-top: 90px;
+  margin-top: 80px;
   margin-bottom: 30px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.345);
   animation: gradientAnimation 25s ease infinite;
+  
 }
 
 .postsList-slogan {
