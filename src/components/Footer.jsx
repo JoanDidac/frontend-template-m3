@@ -51,7 +51,7 @@ const Footer = () => {
             <img src={twitterIcon} alt="Twitter" />
           </a>
         </div>
-        <img src={logoFooter} onClick={handleLogoClick}  alt="Logo" className="footer-logo" />
+        <img  src={logoFooter} onClick={handleLogoClick}  alt="Logo" className="footer-logo" />
         <div className="social-icons">
           <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
             <img src={instagramIcon} alt="Instagram" />
