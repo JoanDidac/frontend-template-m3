@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="column">
           <h4>Sky Pulse</h4>
           <a href="https://github.com/JoanDidac">About</a>
-          <a href="/https://uifresh.net/wp-content/uploads/2021/12/Responsive-contact-form.png">Contact</a>
+          <a href="https://cdn.memegenerator.es/imagenes/memes/full/28/30/28309208.jpg">Contact</a>
           <a href="https://images7.memedroid.com/images/UPLOADED546/6400d6d79e07c.webp">Support</a>
         </div>
         <div className="column">
@@ -26,7 +26,7 @@ const Footer = () => {
           <a href="https://diydrones.com/">Community</a>
         </div>
         <div className="column">
-          <h4>Discover</h4>
+          <h4>Legislation</h4>
           <a href="https://www.oneair.es/normativa-drones-espana-aesa/">Safe Flying</a>
           <a href="https://www.boe.es/doue/2019/152/L00045-00071.pdf">Drone Law</a>
           <a href="https://images7.memedroid.com/images/UPLOADED430/636a71b802a95.webp">Cookies</a>
