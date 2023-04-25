@@ -26,7 +26,7 @@ const VideoSection = () => {
     {
       title: "Agriculture",
       url: "https://i0.wp.com/asiatimes.com/wp-content/uploads/2018/12/iStock-938782966.jpg?resize=1200%2C799&ssl=1",
-      description: "Enhance Prdocution",
+      description: "Enhance your Prodcutivity",
       link: "https://www.deltaquad.com/vtol-drones-for/agriculture/?utm_term=&utm_campaign=EN+-+Competitors&utm_source=adwords&utm_medium=ppc&hsa_acc=1674375646&hsa_cam=19927890872&hsa_grp=147610074373&hsa_ad=653578366725&hsa_src=g&hsa_tgt=dsa-2061082170407&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad=1&gclid=Cj0KCQjwxYOiBhC9ARIsANiEIfb19Pn-s3bGC0b29zvpSY8PiAVU8cDBe4wBhPfJsfqCKhroAQvO7ccaAif9EALw_wcB",
     },
   ];

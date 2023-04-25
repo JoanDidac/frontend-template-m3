@@ -37,7 +37,7 @@ Sky Pulse is a web application designed to provide users with an engaging and in
 - Number of useEffects: 9
 - Number of hooks: 13
 ### Useful links
-- Presentation slides
-- Backend repository
-- Frontend repository
-- Deployed app
+- [Presentation slides]('https://www.canva.com/design/DAFgdhmtP-A/9KYNSXeZWRcuYay311CfhA/view?utm_content=DAFgdhmtP-A&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink#1')
+- [Backend repository]('https://github.com/JoanDidac/backend-template-m3.git')
+- [Frontend repository]('https://github.com/JoanDidac/frontend-template-m3.git')
+- [Deployed app]('https://sky-pulse.netlify.app/')
